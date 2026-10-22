@@ -28,6 +28,9 @@ dev = [
     "pytest-asyncio>=0.24",
     "ruff>=0.6",
 ]
+ha = [
+    "pytest-homeassistant-custom-component==0.13.373; python_full_version >= '3.14.2'",
+]
 
 [tool.hatch.build.targets.wheel]
 packages = ["homesmartlink"]
@@ -38,12 +41,15 @@ include = ["homesmartlink", "README.md"]
 [tool.pytest.ini_options]
 asyncio_mode = "auto"
 asyncio_default_fixture_loop_scope = "function"
+# Client tests run without the Home Assistant plugin (it blocks sockets);
+# integration tests: pytest -o addopts= tests/components
+addopts = "-p no:homeassistant"
 testpaths = ["tests/client"]
 
 [tool.mypy]
 python_version = "3.13"
 strict = true
-files = ["homesmartlink"]
+files = ["homesmartlink", "custom_components"]
 
 [tool.ruff]
 target-version = "py313"

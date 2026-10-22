@@ -1,0 +1,30 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Sign in to Home-SmartLink",
+        "description": "Use the email and password of the Home-SmartLink mobile app.",
+        "data": {
+          "email": "Email",
+          "password": "Password"
+        }
+      },
+      "home": {
+        "title": "Choose a home",
+        "description": "This account has access to several homes.",
+        "data": {
+          "home_id": "Home"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Invalid authentication",
+      "cannot_connect": "Failed to connect",
+      "no_home": "This account has no home.",
+      "unknown": "Unexpected error"
+    },
+    "abort": {
+      "already_configured": "Account is already configured"
+    }
+  }
+}
