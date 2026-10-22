@@ -24,7 +24,7 @@ from homeassistant.components.climate import (
 from homeassistant.components.climate import (
     DOMAIN as CLIMATE_DOMAIN,
 )
-from homeassistant.const import ATTR_ENTITY_ID, ATTR_TEMPERATURE, STATE_UNKNOWN
+from homeassistant.const import ATTR_ENTITY_ID, ATTR_TEMPERATURE, STATE_UNAVAILABLE
 from homeassistant.core import HomeAssistant
 from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
 from homeassistant.helpers import device_registry as dr
@@ -82,7 +82,7 @@ async def test_temperature_unknown_without_status(
     await hass.config_entries.async_setup(config_entry.entry_id)
     await hass.async_block_till_done()
     state = hass.states.get("sensor.cuisine_thermostat_temperature")
-    assert state is not None and state.state == STATE_UNKNOWN
+    assert state is not None and state.state == STATE_UNAVAILABLE
     climate = hass.states.get(CUISINE)
     assert climate is not None and climate.attributes[ATTR_CURRENT_TEMPERATURE] is None
 

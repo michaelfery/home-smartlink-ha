@@ -18,6 +18,7 @@ from .entity import box_device_info
 from .services import async_setup_services
 
 PLATFORMS: list[Platform] = [
+    Platform.BINARY_SENSOR,
     Platform.CLIMATE,
     Platform.DATE,
     Platform.NUMBER,

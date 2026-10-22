@@ -23,3 +23,10 @@ MIN_DIAGNOSIS_INTERVAL: Final = 5
 MAX_DIAGNOSIS_INTERVAL: Final = 120
 
 MAX_BACKOFF: Final = timedelta(minutes=10)
+
+# A diagnosis not acknowledged after this delay means the box did not answer.
+DIAGNOSIS_TIMEOUT: Final = timedelta(minutes=3)
+# Extra margin before a thermostat status is considered stale.
+DIAGNOSIS_GRACE: Final = timedelta(minutes=10)
+# Without diagnoses, the box is considered offline after this silence.
+GATEWAY_SILENCE: Final = timedelta(hours=2)

@@ -6,7 +6,7 @@ import logging
 import time
 from collections.abc import Awaitable, Callable
 from dataclasses import dataclass, replace
-from datetime import timedelta
+from datetime import datetime, timedelta
 from typing import TYPE_CHECKING
 
 from homeassistant.core import HomeAssistant
@@ -30,6 +30,8 @@ from .const import (
     CONF_SCAN_INTERVAL,
     DEFAULT_DIAGNOSIS_INTERVAL,
     DEFAULT_SCAN_INTERVAL,
+    DIAGNOSIS_GRACE,
+    DIAGNOSIS_TIMEOUT,
     DOMAIN,
     MAX_BACKOFF,
 )
@@ -79,7 +81,26 @@ class HomeSmartLinkCoordinator(DataUpdateCoordinator[HomeSmartLinkState]):
         diagnosis_minutes = entry.options.get(CONF_DIAGNOSIS_INTERVAL, DEFAULT_DIAGNOSIS_INTERVAL)
         self._diagnosis_interval = diagnosis_minutes * 60
         self._last_diagnosis: float | None = None
+        self._diagnosis_id: str | None = None
+        self._diagnosis_requested_at: datetime | None = None
         self._failures = 0
+        # Box reachability from diagnosis acknowledgements (None until known).
+        self.box_online: bool | None = None
+
+    @property
+    def diagnosis_enabled(self) -> bool:
+        return bool(self._diagnosis_interval)
+
+    @property
+    def status_max_age(self) -> timedelta | None:
+        """Age after which a thermostat status is considered stale."""
+        if not self._diagnosis_interval:
+            return None
+        return timedelta(seconds=2 * self._diagnosis_interval) + DIAGNOSIS_GRACE
+
+    @property
+    def last_diagnosis_requested_at(self) -> datetime | None:
+        return self._diagnosis_requested_at
 
     async def _async_update_data(self) -> HomeSmartLinkState:
         try:
@@ -100,6 +121,7 @@ class HomeSmartLinkCoordinator(DataUpdateCoordinator[HomeSmartLinkState]):
         status = await self._optional(
             self.client.get_device_status, previous.status if previous else None
         )
+        await self._check_diagnosis()
         await self._maybe_request_diagnosis()
 
         if self._failures:
@@ -129,9 +151,26 @@ class HomeSmartLinkCoordinator(DataUpdateCoordinator[HomeSmartLinkState]):
             return
         self._last_diagnosis = now
         try:
-            await self.client.request_diagnosis(self.home_id)
+            self._diagnosis_id = await self.client.request_diagnosis(self.home_id)
+            self._diagnosis_requested_at = dt_util.utcnow()
         except HomeSmartLinkError as err:
             _LOGGER.debug("Diagnosis request failed: %s", err)
+
+    async def _check_diagnosis(self) -> None:
+        """Follow the pending diagnosis: an acknowledgement means the box is online."""
+        if self._diagnosis_id is None or self._diagnosis_requested_at is None:
+            return
+        try:
+            diagnosis = await self.client.get_diagnosis(self._diagnosis_id)
+        except HomeSmartLinkError as err:
+            _LOGGER.debug("Diagnosis check failed: %s", err)
+            return
+        if diagnosis.acknowledged:
+            self.box_online = True
+            self._diagnosis_id = None
+        elif dt_util.utcnow() - self._diagnosis_requested_at > DIAGNOSIS_TIMEOUT:
+            self.box_online = False
+            self._diagnosis_id = None
 
     def _back_off(self, retry_after: float | None = None) -> None:
         self._failures += 1

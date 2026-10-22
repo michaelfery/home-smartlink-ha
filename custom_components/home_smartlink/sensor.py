@@ -12,6 +12,7 @@ from homeassistant.components.sensor import (
 from homeassistant.const import EntityCategory, UnitOfTemperature
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from homeassistant.util import dt as dt_util
 
 from homesmartlink import Room
 
@@ -44,6 +45,16 @@ class RoomTemperatureSensor(HomeSmartLinkRoomEntity, SensorEntity):
 
     def __init__(self, coordinator: HomeSmartLinkCoordinator, room: Room) -> None:
         super().__init__(coordinator, room, "temperature")
+
+    @property
+    def available(self) -> bool:
+        """Unavailable when the thermostat did not report, or its report is stale."""
+        if not super().available or self.room_status is None:
+            return False
+        status, max_age = self.coordinator.data.status, self.coordinator.status_max_age
+        if max_age is None or status is None or status.created_at is None:
+            return True
+        return dt_util.utcnow() - status.created_at <= max_age
 
     @property
     def native_value(self) -> float | None:

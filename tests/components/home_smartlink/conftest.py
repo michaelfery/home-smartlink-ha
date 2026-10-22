@@ -14,7 +14,7 @@ from homeassistant.core import HomeAssistant
 from pytest_homeassistant_custom_component.common import MockConfigEntry
 
 from custom_components.home_smartlink.const import CONF_HOME_ID, DOMAIN
-from homesmartlink import Gateway, Home, Invitation
+from homesmartlink import Diagnosis, Gateway, Home, Invitation
 from homesmartlink.status import parse_device_status
 
 FIXTURES = Path(__file__).resolve().parents[2] / "fixtures" / "api"
@@ -65,6 +65,7 @@ def mock_client() -> Generator[MagicMock]:
         client.get_gateway.return_value = Gateway.from_dict(load_api("gateway.json"))
         client.get_device_status.return_value = parse_device_status(load_api("device_status.json"))
         client.request_diagnosis.return_value = "diag-1"
+        client.get_diagnosis.return_value = Diagnosis.from_dict(load_api("diagnosys_get.json"))
 
         async def set_room_state(
             home_id: str, room: int, mode: Any, manual: Any = None, **_: Any

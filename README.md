@@ -41,6 +41,7 @@ For the box:
 | `select.box_home_smartlink_home_mode` | Put every room in the same mode (off, frost protection, manual, program); unknown when rooms differ |
 | `switch.box_home_smartlink_vacation_mode` | Vacation mode: frost protection everywhere until the return date (turning it on means back tomorrow) |
 | `date.box_home_smartlink_vacation_return` | Vacation return date; setting it starts vacation mode (at most 227 days) |
+| `binary_sensor.box_home_smartlink_connectivity` | Box reachable: the last diagnosis was acknowledged (or, with diagnoses disabled, the box contacted the cloud in the last 2 hours) |
 | Diagnostic sensors | Last connection to the cloud, time of the last thermostat status update |
 
 ### Modes
@@ -154,7 +155,9 @@ If the password changes, Home Assistant asks you to sign in again (re-authentica
   The app runs one each time it opens. The integration runs one at start-up and then at the
   diagnosis interval. Results arrive about 1–2 minutes after the request, so a measured
   temperature can be up to the diagnosis interval (+2 min) old. The
-  *Thermostat status update* sensor shows when it was collected.
+  *Thermostat status update* sensor shows when it was collected. A room's temperature sensor
+  becomes unavailable when its thermostat did not report, or when the report is older than
+  twice the diagnosis interval plus 10 minutes. The heater itself stays controllable.
 - When the cloud cannot be reached, polling backs off (doubling, up to 10 minutes) and
   returns to normal at the first success.
 
@@ -176,6 +179,12 @@ If the password changes, Home Assistant asks you to sign in again (re-authentica
   edits were checked live against the cloud document, not on the thermostats themselves.
 - Error responses of the cloud (wrong password, expired session, box offline) were never
   observed. They are handled generically.
+
+## Troubleshooting
+
+**Settings → Devices & services → Home-SmartLink → ⋮ → Download diagnostics** gives the home,
+box and thermostat data the integration sees. E-mail, password, identifiers, location and
+the mesh key are redacted, so the file can be attached to an issue.
 
 ## Privacy and security
 
