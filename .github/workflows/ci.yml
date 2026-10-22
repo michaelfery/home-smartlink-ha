@@ -53,5 +53,3 @@ jobs:
       - uses: hacs/action@main
         with:
           category: integration
-          # No brand images submitted to home-assistant/brands yet.
-          ignore: brands
