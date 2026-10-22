@@ -154,3 +154,7 @@ Fixtures in `tests/fixtures/` are generated from local captures (kept out of git
 2. Tag `vX.Y.Z` and push the tag. The release workflow checks the versions and publishes
    `homesmartlink` to PyPI (Trusted Publishing).
 3. Create a GitHub release for HACS.
+
+## License
+
+[MIT](LICENSE)
