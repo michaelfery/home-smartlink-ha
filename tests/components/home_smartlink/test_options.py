@@ -118,7 +118,7 @@ async def test_advanced_program_editor(
 
     assert result["type"] is FlowResultType.ABORT
     assert result["reason"] == "program_saved"
-    mock_client.update_program.assert_awaited_once()
+    mock_client.update_home.assert_awaited_once()
     events = {e.event_id: e for e in written(mock_client).room(BATHROOM).events}
     assert (events[2].start_hour, events[2].end_hour, events[2].end_minute) == (17, 21, 30)
     assert days_from_mask(events[2].recurrence) == {0, 4}
@@ -202,7 +202,7 @@ async def test_unchanged_program(
         result["flow_id"], {f"slot{n}": current[f"slot{n}"] for n in range(1, 7)}
     )
     assert result["reason"] == "program_unchanged"
-    mock_client.update_program.assert_not_awaited()
+    mock_client.update_home.assert_not_awaited()
 
 
 async def test_program_editor_needs_loaded_entry(

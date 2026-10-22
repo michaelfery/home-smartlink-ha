@@ -152,6 +152,12 @@ class HomeSmartLinkClient:
 
         return await self.update_room(home_id, room_number, edit, today=today)
 
+    async def update_program(
+        self, home_id: str, edit: Callable[[Home], Home], *, today: date | None = None
+    ) -> Home:
+        """Weekly-program edit (whole-home frame, no description, like the app)."""
+        return await self.update_home(home_id, edit, today=today)
+
     async def update_room(
         self,
         home_id: str,
@@ -183,17 +189,18 @@ class HomeSmartLinkClient:
             await self._save(updated)
             return updated
 
-    async def update_program(
+    async def update_home(
         self,
         home_id: str,
         edit: Callable[[Home], Home],
         *,
+        description: str | None = None,
         today: date | None = None,
     ) -> Home:
-        """Apply a weekly-program edit like the app's program screens.
+        """Apply a home-wide edit like the app's program, settings and home screens.
 
         Same as update_room, but the box receives the whole-home frame
-        (`payload`), as the app does after editing program slots.
+        (`payload`): weekly programs, vacation mode, whole-home modes.
         """
         async with self._write_lock:
             updated = edit(await self.get_home(home_id))
@@ -201,7 +208,7 @@ class HomeSmartLinkClient:
             await self._notify(
                 {
                     "payload": b64(encode_home(updated, today=day)),
-                    "description": None,
+                    "description": description,
                     "homeId": home_id,
                     "tests": build_tests(updated, today=day),
                 }

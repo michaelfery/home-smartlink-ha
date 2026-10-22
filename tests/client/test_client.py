@@ -242,3 +242,26 @@ async def test_rejected_edit_sends_nothing(
         )
     assert not fake.calls("POST", "api/1/device/notify")
     assert not fake.calls("PUT", "api/1/homes/")
+
+
+async def test_update_home_sends_description(
+    client: HomeSmartLinkClient, fake: FakeCloud, home_id: str, home_payload: Any
+) -> None:
+    from datetime import date
+
+    from homesmartlink.settings import vacation_description, with_vacation
+
+    today, back = date(2026, 10, 22), date(2026, 10, 25)
+    _add_write_routes(fake, home_id, home_payload)
+    await client.update_home(
+        home_id,
+        lambda home: with_vacation(home, back, today),
+        description=vacation_description(back),
+        today=today,
+    )
+    notify = fake.calls("POST", "api/1/device/notify")[0].json
+    assert notify["description"] == "mode vacance 10/25/2026 00:00:00"
+    assert len(base64.b64decode(notify["payload"])) == 512
+    assert fake.calls("PUT", "api/1/homes/")[0].json["vacationReturnDate"] == (
+        "2026-10-25T00:00:00.000Z"
+    )

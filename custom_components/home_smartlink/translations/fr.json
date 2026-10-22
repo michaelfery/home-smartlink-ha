@@ -164,12 +164,9 @@
     }
   },
   "entity": {
-    "sensor": {
-      "last_connection": {
-        "name": "Dernière connexion"
-      },
-      "status_updated": {
-        "name": "Mise à jour de l'état des thermostats"
+    "date": {
+      "vacation_return": {
+        "name": "Retour de vacances"
       }
     },
     "number": {
@@ -187,6 +184,31 @@
           "advanced": "Avancée",
           "simplified": "Simplifiée"
         }
+      },
+      "home_mode": {
+        "name": "Mode de la maison",
+        "state": {
+          "off": "Arrêt",
+          "antifreeze": "Hors-gel",
+          "manual": "Manuel",
+          "program": "Programmation"
+        }
+      }
+    },
+    "sensor": {
+      "last_connection": {
+        "name": "Dernière connexion"
+      },
+      "status_updated": {
+        "name": "Mise à jour de l'état des thermostats"
+      }
+    },
+    "switch": {
+      "vacation": {
+        "name": "Mode vacances"
+      },
+      "open_window_detection": {
+        "name": "Détection de fenêtre ouverte"
       }
     }
   },

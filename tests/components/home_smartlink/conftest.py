@@ -91,6 +91,7 @@ def mock_client() -> Generator[MagicMock]:
 
         client.update_room.side_effect = apply_edit
         client.update_program.side_effect = apply_edit
+        client.update_home.side_effect = apply_edit
         client.set_room_state.side_effect = set_room_state
         yield client
 

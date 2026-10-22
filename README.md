@@ -31,8 +31,17 @@ For each room with a thermostat:
 | `number.<room>_thermostat_comfort_temperature_program` | Comfort temperature of Program mode (13–30 °C) |
 | `select.<room>_thermostat_programming_preference` | Program type: `advanced` or `simplified` |
 
-For the box (diagnostic entities): last connection to the cloud, and time of the last
-thermostat status update.
+For each room, a configuration switch `switch.<room>_thermostat_open_window_detection`
+(stop heating while a window is detected open).
+
+For the box:
+
+| Entity | Content |
+|---|---|
+| `select.box_home_smartlink_home_mode` | Put every room in the same mode (off, frost protection, manual, program); unknown when rooms differ |
+| `switch.box_home_smartlink_vacation_mode` | Vacation mode: frost protection everywhere until the return date (turning it on means back tomorrow) |
+| `date.box_home_smartlink_vacation_return` | Vacation return date; setting it starts vacation mode (at most 227 days) |
+| Diagnostic sensors | Last connection to the cloud, time of the last thermostat status update |
 
 ### Modes
 
@@ -161,9 +170,8 @@ If the password changes, Home Assistant asks you to sign in again (re-authentica
 - **The `auto` target is computed** from the program and Home Assistant's time zone, the
   same way the app does. It assumes Home Assistant and the home are in the same time zone.
   Antifreeze shows 7 °C, the value the app displays.
-- **Not supported:** vacation mode, geofencing, open-window detection, temperature
-  limitation, slot modes Boost/Fan beyond setting them, consumption counters. Use the app
-  for these.
+- **Not supported:** geofencing, temperature limitation, Ecowatt, consumption counters,
+  slot modes Boost/Fan beyond setting them. Use the app for these.
 - The command frames come from the decompiled app ([docs/API.md](docs/API.md) §5). Program
   edits were checked live against the cloud document, not on the thermostats themselves.
 - Error responses of the cloud (wrong password, expired session, box offline) were never

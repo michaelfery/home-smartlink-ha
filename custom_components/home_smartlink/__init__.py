@@ -17,7 +17,14 @@ from .coordinator import HomeSmartLinkCoordinator
 from .entity import box_device_info
 from .services import async_setup_services
 
-PLATFORMS: list[Platform] = [Platform.CLIMATE, Platform.NUMBER, Platform.SELECT, Platform.SENSOR]
+PLATFORMS: list[Platform] = [
+    Platform.CLIMATE,
+    Platform.DATE,
+    Platform.NUMBER,
+    Platform.SELECT,
+    Platform.SENSOR,
+    Platform.SWITCH,
+]
 CONFIG_SCHEMA = cv.config_entry_only_config_schema(DOMAIN)
 
 type HomeSmartLinkConfigEntry = ConfigEntry[HomeSmartLinkCoordinator]

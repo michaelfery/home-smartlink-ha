@@ -141,7 +141,7 @@ async def test_set_program_slot_service(
         },
         blocking=True,
     )
-    mock_client.update_program.assert_awaited_once()
+    mock_client.update_home.assert_awaited_once()
     slot = next(e for e in written_home(mock_client).room(2).events if e.event_id == 2)
     assert (slot.start_hour, slot.end_hour, slot.end_minute) == (17, 21, 30)
     assert days_from_mask(slot.recurrence) == {0, 4}

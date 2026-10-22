@@ -277,6 +277,19 @@ From `ProgramRange`, `Room` and `EcoPilotRoomExtension`:
     starts.
 - Switching the programming preference only flips `ecopilotEnabled`; no slot is reset.
 
+### 5.4 Settings and whole-home commands (decompiled app)
+
+- **Vacation mode** (`SettingsViewModel`): active while `vacationReturnDate` is after today.
+  - Turning it on sets the return date to tomorrow; turning it off sets `0001-01-01T00:00:00.000Z`.
+  - The date is written as local midnight followed by a literal `Z` (`yyyy-MM-ddT00:00:00.000Z`).
+  - It is sent as a home frame with the description `mode vacance <MM/dd/yyyy HH:mm:ss>`; the
+    other date changes have no description.
+  - Thermostats receive the days left in every room frame (bits 33-39, at most 227).
+- **Whole-home mode** (`HomeControlViewModel.ChangeModeForHome`): sets `currentMode` of every
+  room, then sends a home frame with the description `toute ma maison => <Stop|Antifreeze|Manual|Prog>`.
+- **Open-window detection** (room editor): `openWindowsDetectionEnabled`, sent as a room
+  frame (bit 12 of the header).
+
 ## 6. Errors observed
 
 **None.** Every request in every capture returned `200`. Not observed yet: wrong password,

@@ -160,8 +160,16 @@ class HomeSmartLinkCoordinator(DataUpdateCoordinator[HomeSmartLinkState]):
 
     async def async_update_program(self, edit: Callable[[Home], Home]) -> None:
         """Weekly program edit, like the app's program editor."""
+        await self.async_update_home(edit)
+
+    async def async_update_home(
+        self, edit: Callable[[Home], Home], description: str | None = None
+    ) -> None:
+        """Home-wide edit (program, vacation, whole-home mode): whole-home frame."""
         await self._apply(
-            await self.client.update_program(self.home_id, edit, today=dt_util.now().date())
+            await self.client.update_home(
+                self.home_id, edit, description=description, today=dt_util.now().date()
+            )
         )
 
     async def _apply(self, home: Home) -> None:

@@ -164,12 +164,9 @@
     }
   },
   "entity": {
-    "sensor": {
-      "last_connection": {
-        "name": "Last connection"
-      },
-      "status_updated": {
-        "name": "Thermostat status update"
+    "date": {
+      "vacation_return": {
+        "name": "Vacation return"
       }
     },
     "number": {
@@ -187,6 +184,31 @@
           "advanced": "Advanced",
           "simplified": "Simplified"
         }
+      },
+      "home_mode": {
+        "name": "Home mode",
+        "state": {
+          "off": "Off",
+          "antifreeze": "Frost protection",
+          "manual": "Manual",
+          "program": "Program"
+        }
+      }
+    },
+    "sensor": {
+      "last_connection": {
+        "name": "Last connection"
+      },
+      "status_updated": {
+        "name": "Thermostat status update"
+      }
+    },
+    "switch": {
+      "vacation": {
+        "name": "Vacation mode"
+      },
+      "open_window_detection": {
+        "name": "Open window detection"
       }
     }
   },
