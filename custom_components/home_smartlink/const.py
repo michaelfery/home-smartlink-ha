@@ -6,6 +6,7 @@ from datetime import timedelta
 from typing import Final
 
 DOMAIN: Final = "home_smartlink"
+MANUFACTURER: Final = "Carrera"
 
 CONF_HOME_ID: Final = "home_id"
 CONF_SCAN_INTERVAL: Final = "scan_interval"

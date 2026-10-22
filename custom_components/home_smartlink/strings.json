@@ -26,5 +26,23 @@
     "abort": {
       "already_configured": "[%key:common::config_flow::abort::already_configured_account%]"
     }
+  },
+  "entity": {
+    "sensor": {
+      "last_connection": {
+        "name": "Last connection"
+      },
+      "status_updated": {
+        "name": "Thermostat status update"
+      }
+    }
+  },
+  "exceptions": {
+    "unsupported_command": {
+      "message": "This command is not supported: {error}"
+    },
+    "command_failed": {
+      "message": "Home-SmartLink did not accept the command: {error}"
+    }
   }
 }

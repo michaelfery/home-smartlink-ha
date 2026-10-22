@@ -26,5 +26,23 @@
     "abort": {
       "already_configured": "Ce compte est déjà configuré"
     }
+  },
+  "entity": {
+    "sensor": {
+      "last_connection": {
+        "name": "Dernière connexion"
+      },
+      "status_updated": {
+        "name": "Mise à jour de l'état des thermostats"
+      }
+    }
+  },
+  "exceptions": {
+    "unsupported_command": {
+      "message": "Cette commande n'est pas prise en charge : {error}"
+    },
+    "command_failed": {
+      "message": "Home-SmartLink n'a pas accepté la commande : {error}"
+    }
   }
 }

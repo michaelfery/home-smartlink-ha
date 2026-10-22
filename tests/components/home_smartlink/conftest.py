@@ -76,7 +76,10 @@ def mock_client() -> Generator[MagicMock]:
                 settings.standard_value,
                 settings.limitation_set_point,
             )
-            return home.with_room_settings(room, new)
+            updated = home.with_room_settings(room, new)
+            # The cloud now serves the written document.
+            client.get_home.return_value = updated
+            return updated
 
         client.set_room_state.side_effect = set_room_state
         yield client

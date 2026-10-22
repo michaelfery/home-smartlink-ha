@@ -74,6 +74,7 @@ class HomeSmartLinkCoordinator(DataUpdateCoordinator[HomeSmartLinkState]):
         )
         self.client = client
         self.home_id = home_id
+        self.box_device_id: str | None = None
         diagnosis_minutes = entry.options.get(CONF_DIAGNOSIS_INTERVAL, DEFAULT_DIAGNOSIS_INTERVAL)
         self._diagnosis_interval = diagnosis_minutes * 60
         self._last_diagnosis: float | None = None

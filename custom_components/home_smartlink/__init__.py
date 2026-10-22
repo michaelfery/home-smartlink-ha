@@ -5,14 +5,16 @@ from __future__ import annotations
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.const import CONF_EMAIL, CONF_PASSWORD, Platform
 from homeassistant.core import HomeAssistant
+from homeassistant.helpers import device_registry as dr
 from homeassistant.helpers.aiohttp_client import async_get_clientsession
 
 from homesmartlink import HomeSmartLinkClient
 
 from .const import CONF_HOME_ID
 from .coordinator import HomeSmartLinkCoordinator
+from .entity import box_device_info
 
-PLATFORMS: list[Platform] = []
+PLATFORMS: list[Platform] = [Platform.CLIMATE, Platform.SENSOR]
 
 type HomeSmartLinkConfigEntry = ConfigEntry[HomeSmartLinkCoordinator]
 
@@ -27,6 +29,11 @@ async def async_setup_entry(hass: HomeAssistant, entry: HomeSmartLinkConfigEntry
     await coordinator.async_config_entry_first_refresh()
 
     entry.runtime_data = coordinator
+    # Thermostats reference the box (via_device): register it first.
+    box = dr.async_get(hass).async_get_or_create(
+        config_entry_id=entry.entry_id, **box_device_info(coordinator)
+    )
+    coordinator.box_device_id = box.id
     await hass.config_entries.async_forward_entry_setups(entry, PLATFORMS)
     return True
 
