@@ -40,15 +40,127 @@
     "step": {
       "init": {
         "title": "Home-SmartLink options",
+        "menu_options": {
+          "program": "Weekly program",
+          "intervals": "Polling and diagnosis"
+        }
+      },
+      "intervals": {
+        "title": "Polling and diagnosis",
         "description": "Diagnoses make the box poll every thermostat, which refreshes the measured temperatures (results arrive about 1–2 minutes later). Set 0 to disable them.",
         "data": {
           "scan_interval": "Polling interval",
           "diagnosis_interval": "Diagnosis interval"
         }
+      },
+      "program": {
+        "title": "Weekly program",
+        "description": "Choose the room whose program you want to edit.",
+        "data": {
+          "room": "Room"
+        }
+      },
+      "room": {
+        "title": "{room}: program settings",
+        "description": "In auto mode, the heater uses the comfort temperature while a program slot is active, and the eco temperature otherwise. Advanced programs have six slots with their own days; Simplified programs have Morning, Day and Evening ranges.",
+        "data": {
+          "programming_preference": "Programming preference",
+          "eco_temperature": "Eco temperature",
+          "comfort_temperature": "Comfort temperature"
+        }
+      },
+      "advanced": {
+        "title": "{room}: Advanced program",
+        "description": "Six slots, as in the app's calendar screen. A slot heats at comfort temperature on the chosen days; with no day it is disabled. Times are multiples of 10 minutes.",
+        "sections": {
+          "slot1": {
+            "name": "Slot 1",
+            "data": {
+              "start": "Start",
+              "end": "End",
+              "days": "Days"
+            }
+          },
+          "slot2": {
+            "name": "Slot 2",
+            "data": {
+              "start": "Start",
+              "end": "End",
+              "days": "Days"
+            }
+          },
+          "slot3": {
+            "name": "Slot 3",
+            "data": {
+              "start": "Start",
+              "end": "End",
+              "days": "Days"
+            }
+          },
+          "slot4": {
+            "name": "Slot 4",
+            "data": {
+              "start": "Start",
+              "end": "End",
+              "days": "Days"
+            }
+          },
+          "slot5": {
+            "name": "Slot 5",
+            "data": {
+              "start": "Start",
+              "end": "End",
+              "days": "Days"
+            }
+          },
+          "slot6": {
+            "name": "Slot 6",
+            "data": {
+              "start": "Start",
+              "end": "End",
+              "days": "Days"
+            }
+          }
+        }
+      },
+      "simplified": {
+        "title": "{room}: Simplified program",
+        "description": "Day always spans from the end of Morning to the start of Evening. Each range heats at comfort temperature on the chosen days. Times are multiples of 10 minutes.",
+        "sections": {
+          "morning": {
+            "name": "Morning",
+            "data": {
+              "start": "Start",
+              "end": "End",
+              "days": "Days"
+            }
+          },
+          "day": {
+            "name": "Day",
+            "data": {
+              "days": "Days"
+            }
+          },
+          "evening": {
+            "name": "Evening",
+            "data": {
+              "start": "Start",
+              "end": "End",
+              "days": "Days"
+            }
+          }
+        }
       }
     },
     "error": {
-      "diagnosis_interval_too_short": "Use 0 (disabled) or at least 5 minutes."
+      "diagnosis_interval_too_short": "Use 0 (disabled) or at least 5 minutes.",
+      "invalid_program": "Program not saved: {error}",
+      "cannot_connect": "Failed to connect to Home-SmartLink"
+    },
+    "abort": {
+      "program_saved": "The program was sent to Home-SmartLink.",
+      "program_unchanged": "Nothing was changed.",
+      "not_loaded": "The integration must be loaded to edit programs."
     }
   },
   "entity": {
@@ -103,6 +215,12 @@
         "standard": "Standard",
         "boost": "Boost",
         "fan": "Fan"
+      }
+    },
+    "programming_preference": {
+      "options": {
+        "advanced": "Advanced",
+        "simplified": "Simplified"
       }
     }
   },

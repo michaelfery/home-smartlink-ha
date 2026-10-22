@@ -40,15 +40,127 @@
     "step": {
       "init": {
         "title": "Options Home-SmartLink",
+        "menu_options": {
+          "program": "Programmation hebdomadaire",
+          "intervals": "Interrogation et diagnostic"
+        }
+      },
+      "intervals": {
+        "title": "Interrogation et diagnostic",
         "description": "Les diagnostics demandent à la box d'interroger chaque thermostat, ce qui rafraîchit les températures mesurées (résultat environ 1 à 2 minutes plus tard). Mettez 0 pour les désactiver.",
         "data": {
           "scan_interval": "Intervalle d'interrogation",
           "diagnosis_interval": "Intervalle des diagnostics"
         }
+      },
+      "program": {
+        "title": "Programmation hebdomadaire",
+        "description": "Choisissez la pièce dont vous voulez modifier la programmation.",
+        "data": {
+          "room": "Pièce"
+        }
+      },
+      "room": {
+        "title": "{room} : réglages du programme",
+        "description": "En mode auto, le radiateur vise la température confort pendant une plage active, et la température éco sinon. La programmation avancée a six plages avec leurs propres jours ; la simplifiée a les plages Matin, Journée et Soir.",
+        "data": {
+          "programming_preference": "Préférence de programmation",
+          "eco_temperature": "Température éco",
+          "comfort_temperature": "Température confort"
+        }
+      },
+      "advanced": {
+        "title": "{room} : programmation avancée",
+        "description": "Six plages, comme l'écran calendrier de l'application. Une plage chauffe en confort les jours cochés ; sans aucun jour, elle est désactivée. Heures en multiples de 10 minutes.",
+        "sections": {
+          "slot1": {
+            "name": "Plage 1",
+            "data": {
+              "start": "Début",
+              "end": "Fin",
+              "days": "Jours"
+            }
+          },
+          "slot2": {
+            "name": "Plage 2",
+            "data": {
+              "start": "Début",
+              "end": "Fin",
+              "days": "Jours"
+            }
+          },
+          "slot3": {
+            "name": "Plage 3",
+            "data": {
+              "start": "Début",
+              "end": "Fin",
+              "days": "Jours"
+            }
+          },
+          "slot4": {
+            "name": "Plage 4",
+            "data": {
+              "start": "Début",
+              "end": "Fin",
+              "days": "Jours"
+            }
+          },
+          "slot5": {
+            "name": "Plage 5",
+            "data": {
+              "start": "Début",
+              "end": "Fin",
+              "days": "Jours"
+            }
+          },
+          "slot6": {
+            "name": "Plage 6",
+            "data": {
+              "start": "Début",
+              "end": "Fin",
+              "days": "Jours"
+            }
+          }
+        }
+      },
+      "simplified": {
+        "title": "{room} : programmation simplifiée",
+        "description": "La Journée va toujours de la fin du Matin au début du Soir. Chaque plage chauffe en confort les jours cochés. Heures en multiples de 10 minutes.",
+        "sections": {
+          "morning": {
+            "name": "Matin",
+            "data": {
+              "start": "Début",
+              "end": "Fin",
+              "days": "Jours"
+            }
+          },
+          "day": {
+            "name": "Journée",
+            "data": {
+              "days": "Jours"
+            }
+          },
+          "evening": {
+            "name": "Soir",
+            "data": {
+              "start": "Début",
+              "end": "Fin",
+              "days": "Jours"
+            }
+          }
+        }
       }
     },
     "error": {
-      "diagnosis_interval_too_short": "Utilisez 0 (désactivé) ou au moins 5 minutes."
+      "diagnosis_interval_too_short": "Utilisez 0 (désactivé) ou au moins 5 minutes.",
+      "invalid_program": "Programme non enregistré : {error}",
+      "cannot_connect": "Échec de connexion à Home-SmartLink"
+    },
+    "abort": {
+      "program_saved": "La programmation a été envoyée à Home-SmartLink.",
+      "program_unchanged": "Aucune modification.",
+      "not_loaded": "L'intégration doit être chargée pour modifier la programmation."
     }
   },
   "entity": {
@@ -103,6 +215,12 @@
         "standard": "Standard",
         "boost": "Boost",
         "fan": "Ventilation"
+      }
+    },
+    "programming_preference": {
+      "options": {
+        "advanced": "Avancée",
+        "simplified": "Simplifiée"
       }
     }
   },
