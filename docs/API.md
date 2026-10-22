@@ -240,11 +240,24 @@ byte 3 = end time in 10-minute slots    (22:00 → 132 = 0x84)
 
 ### 5.2 `tests` field
 
-A space-separated regex per room, `R<room>D[0-9]M<mode>S[0-9]C(<a>|<b>)A..J..W..M..Y..`,
-where `M` = `currentMode` and `C` = set point × 2 (38 = 19 °C, 40 = 20 °C). It appears to
-describe the device status string expected after the command (the APK also contains the
-sample `R7D1M3S4TC44TA41`). **Whether the server requires or checks it was not observed.**
-The first alternative in `C(..)` (26 for room 0, 31 for room 2) is not understood.
+One regex per room, all rooms in home order, joined by a single space:
+`R<room>D[0-9]M<device mode>S[0-9]C<set points>A[0-9]{1,3}J[0-9]{1,3}W[0-9]{1,3}M[0-9]{1,3}Y[0-9]{1,3}`.
+It describes the status string expected from each thermostat (same format as
+`deviceStatus`). **Whether the server requires or checks it was not observed.**
+
+| Room state (`currentMode`) | Device mode `M` | `C` part |
+|---|---|---|
+| Stop (1) | `0` | `([0-9]{2})` |
+| Antifreeze (2) | `1` | `([0-9]{2})` |
+| Manual (3) | `3` | `(26\|<manualValue × 2>)` |
+| Program (4), ecopilot on | `7` | `(<economyValue × 2>\|<standardValue × 2>)` |
+| Program (4), ecopilot off | `4` | same as above |
+
+These rules reproduce all 38 captured `tests` strings (checked in `tests/client/test_frame.py`).
+The device mode codes are also the `M` values reported by `deviceStatus`.
+
+Not understood: the constant `26` (13 °C) in Manual. It was only observed on rooms with
+ecopilot on and `economyValue` 15.5, so it could also be derived from one of these.
 
 ## 6. Errors observed
 
