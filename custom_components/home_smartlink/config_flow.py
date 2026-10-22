@@ -3,13 +3,23 @@
 from __future__ import annotations
 
 import logging
+from collections.abc import Mapping
 from typing import Any
 
 import probatio
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
+from homeassistant.config_entries import (
+    ConfigEntry,
+    ConfigFlow,
+    ConfigFlowResult,
+    OptionsFlowWithReload,
+)
 from homeassistant.const import CONF_EMAIL, CONF_PASSWORD
+from homeassistant.core import callback
 from homeassistant.helpers.aiohttp_client import async_get_clientsession
 from homeassistant.helpers.selector import (
+    NumberSelector,
+    NumberSelectorConfig,
+    NumberSelectorMode,
     SelectSelector,
     SelectSelectorConfig,
     TextSelector,
@@ -25,18 +35,53 @@ from homesmartlink import (
     Invitation,
 )
 
-from .const import CONF_HOME_ID, DOMAIN
+from .const import (
+    CONF_DIAGNOSIS_INTERVAL,
+    CONF_HOME_ID,
+    CONF_SCAN_INTERVAL,
+    DEFAULT_DIAGNOSIS_INTERVAL,
+    DEFAULT_SCAN_INTERVAL,
+    DOMAIN,
+    MAX_DIAGNOSIS_INTERVAL,
+    MIN_DIAGNOSIS_INTERVAL,
+    MIN_SCAN_INTERVAL,
+)
 
 _LOGGER = logging.getLogger(__name__)
+
+PASSWORD_SELECTOR = TextSelector(
+    TextSelectorConfig(type=TextSelectorType.PASSWORD, autocomplete="current-password")
+)
+REAUTH_SCHEMA = probatio.Schema({probatio.Required(CONF_PASSWORD): PASSWORD_SELECTOR})
+OPTIONS_SCHEMA = probatio.Schema(
+    {
+        probatio.Required(CONF_SCAN_INTERVAL): NumberSelector(
+            NumberSelectorConfig(
+                min=MIN_SCAN_INTERVAL,
+                max=3600,
+                step=1,
+                unit_of_measurement="s",
+                mode=NumberSelectorMode.BOX,
+            )
+        ),
+        probatio.Required(CONF_DIAGNOSIS_INTERVAL): NumberSelector(
+            NumberSelectorConfig(
+                min=0,
+                max=MAX_DIAGNOSIS_INTERVAL,
+                step=1,
+                unit_of_measurement="min",
+                mode=NumberSelectorMode.BOX,
+            )
+        ),
+    }
+)
 
 USER_SCHEMA = probatio.Schema(
     {
         probatio.Required(CONF_EMAIL): TextSelector(
             TextSelectorConfig(type=TextSelectorType.EMAIL, autocomplete="username")
         ),
-        probatio.Required(CONF_PASSWORD): TextSelector(
-            TextSelectorConfig(type=TextSelectorType.PASSWORD, autocomplete="current-password")
-        ),
+        probatio.Required(CONF_PASSWORD): PASSWORD_SELECTOR,
     }
 )
 
@@ -111,4 +156,67 @@ class HomeSmartLinkConfigFlow(ConfigFlow, domain=DOMAIN):
         return self.async_create_entry(
             title=f"Home-SmartLink ({self._credentials[CONF_EMAIL]})",
             data={**self._credentials, CONF_HOME_ID: home_id},
+        )
+
+    @staticmethod
+    @callback
+    def async_get_options_flow(config_entry: ConfigEntry) -> HomeSmartLinkOptionsFlow:
+        return HomeSmartLinkOptionsFlow()
+
+    async def async_step_reauth(self, entry_data: Mapping[str, Any]) -> ConfigFlowResult:
+        """The stored password was rejected."""
+        return await self.async_step_reauth_confirm()
+
+    async def async_step_reauth_confirm(
+        self, user_input: dict[str, Any] | None = None
+    ) -> ConfigFlowResult:
+        entry = self._get_reauth_entry()
+        email = entry.data[CONF_EMAIL]
+        errors: dict[str, str] = {}
+        if user_input is not None:
+            invitations, error = await self._sign_in(email, user_input[CONF_PASSWORD])
+            if error:
+                errors["base"] = error
+            elif entry.data[CONF_HOME_ID] not in {i.home_id for i in invitations}:
+                return self.async_abort(reason="wrong_account")
+            else:
+                return self.async_update_reload_and_abort(
+                    entry, data_updates={CONF_PASSWORD: user_input[CONF_PASSWORD]}
+                )
+
+        return self.async_show_form(
+            step_id="reauth_confirm",
+            data_schema=REAUTH_SCHEMA,
+            description_placeholders={"email": email},
+            errors=errors,
+        )
+
+
+class HomeSmartLinkOptionsFlow(OptionsFlowWithReload):
+    """Polling and diagnosis intervals."""
+
+    async def async_step_init(self, user_input: dict[str, Any] | None = None) -> ConfigFlowResult:
+        errors: dict[str, str] = {}
+        if user_input is not None:
+            diagnosis = int(user_input[CONF_DIAGNOSIS_INTERVAL])
+            if 0 < diagnosis < MIN_DIAGNOSIS_INTERVAL:
+                errors[CONF_DIAGNOSIS_INTERVAL] = "diagnosis_interval_too_short"
+            else:
+                return self.async_create_entry(
+                    data={
+                        CONF_SCAN_INTERVAL: int(user_input[CONF_SCAN_INTERVAL]),
+                        CONF_DIAGNOSIS_INTERVAL: diagnosis,
+                    }
+                )
+
+        current = {
+            CONF_SCAN_INTERVAL: DEFAULT_SCAN_INTERVAL,
+            CONF_DIAGNOSIS_INTERVAL: DEFAULT_DIAGNOSIS_INTERVAL,
+            **self.config_entry.options,
+            **(user_input or {}),
+        }
+        return self.async_show_form(
+            step_id="init",
+            data_schema=self.add_suggested_values_to_schema(OPTIONS_SCHEMA, current),
+            errors=errors,
         )

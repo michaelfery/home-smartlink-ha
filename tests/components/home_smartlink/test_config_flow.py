@@ -113,3 +113,49 @@ async def test_already_configured(
     result = await hass.config_entries.flow.async_configure(result["flow_id"], USER_INPUT)
     assert result["type"] is FlowResultType.ABORT
     assert result["reason"] == "already_configured"
+
+
+async def test_reauth_updates_password(
+    hass: HomeAssistant, mock_flow_client: MagicMock, mock_setup_entry: AsyncMock
+) -> None:
+    entry = MockConfigEntry(
+        domain=DOMAIN,
+        unique_id=HOME_ID,
+        data={**USER_INPUT, CONF_PASSWORD: "old", CONF_HOME_ID: HOME_ID},
+    )
+    entry.add_to_hass(hass)
+    result = await entry.start_reauth_flow(hass)
+    assert result["type"] is FlowResultType.FORM
+    assert result["step_id"] == "reauth_confirm"
+    assert result["description_placeholders"]["email"] == EMAIL
+
+    mock_flow_client.login.side_effect = AuthenticationError("still bad")
+    result = await hass.config_entries.flow.async_configure(
+        result["flow_id"], {CONF_PASSWORD: "wrong"}
+    )
+    assert result["errors"] == {"base": "invalid_auth"}
+
+    mock_flow_client.login.side_effect = None
+    result = await hass.config_entries.flow.async_configure(
+        result["flow_id"], {CONF_PASSWORD: "new-password"}
+    )
+    assert result["type"] is FlowResultType.ABORT
+    assert result["reason"] == "reauth_successful"
+    assert entry.data[CONF_PASSWORD] == "new-password"
+    assert entry.data[CONF_EMAIL] == EMAIL
+
+
+async def test_reauth_with_other_account(
+    hass: HomeAssistant, mock_flow_client: MagicMock, mock_setup_entry: AsyncMock
+) -> None:
+    entry = MockConfigEntry(
+        domain=DOMAIN, unique_id=HOME_ID, data={**USER_INPUT, CONF_HOME_ID: HOME_ID}
+    )
+    entry.add_to_hass(hass)
+    mock_flow_client.login.return_value = [Invitation(id="x", home_id="other-home", role=2)]
+    result = await entry.start_reauth_flow(hass)
+    result = await hass.config_entries.flow.async_configure(
+        result["flow_id"], {CONF_PASSWORD: PASSWORD}
+    )
+    assert result["type"] is FlowResultType.ABORT
+    assert result["reason"] == "wrong_account"

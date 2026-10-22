@@ -6,7 +6,7 @@ from datetime import timedelta
 from unittest.mock import MagicMock, patch
 
 import pytest
-from homeassistant.config_entries import ConfigEntryState
+from homeassistant.config_entries import SOURCE_REAUTH, ConfigEntryState
 from homeassistant.core import HomeAssistant
 from pytest_homeassistant_custom_component.common import MockConfigEntry
 
@@ -127,7 +127,7 @@ async def test_backoff_is_capped_and_honors_retry_after(
     assert coordinator.update_interval == timedelta(minutes=10)
 
 
-async def test_auth_failure_stops_setup(
+async def test_auth_failure_starts_reauth(
     hass: HomeAssistant, config_entry: MockConfigEntry, mock_client: MagicMock
 ) -> None:
     mock_client.get_home.side_effect = AuthenticationError("bad")
@@ -135,6 +135,8 @@ async def test_auth_failure_stops_setup(
     await hass.config_entries.async_setup(config_entry.entry_id)
     await hass.async_block_till_done()
     assert config_entry.state is ConfigEntryState.SETUP_ERROR
+    flows = hass.config_entries.flow.async_progress_by_handler(DOMAIN)
+    assert [f["context"]["source"] for f in flows] == [SOURCE_REAUTH]
 
 
 @pytest.mark.parametrize("error", [CannotConnectError("down"), RateLimitError("slow")])

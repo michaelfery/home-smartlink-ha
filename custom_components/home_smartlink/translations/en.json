@@ -15,6 +15,13 @@
         "data": {
           "home_id": "Home"
         }
+      },
+      "reauth_confirm": {
+        "title": "Sign in again",
+        "description": "Home-SmartLink rejected the saved password for {email}. Enter the current password of the mobile app.",
+        "data": {
+          "password": "Password"
+        }
       }
     },
     "error": {
@@ -24,7 +31,24 @@
       "unknown": "Unexpected error"
     },
     "abort": {
-      "already_configured": "Account is already configured"
+      "already_configured": "Account is already configured",
+      "wrong_account": "These credentials give access to a different home.",
+      "reauth_successful": "Re-authentication was successful"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Home-SmartLink options",
+        "description": "Diagnoses make the box poll every thermostat, which refreshes the measured temperatures (results arrive about 1–2 minutes later). Set 0 to disable them.",
+        "data": {
+          "scan_interval": "Polling interval",
+          "diagnosis_interval": "Diagnosis interval"
+        }
+      }
+    },
+    "error": {
+      "diagnosis_interval_too_short": "Use 0 (disabled) or at least 5 minutes."
     }
   },
   "entity": {

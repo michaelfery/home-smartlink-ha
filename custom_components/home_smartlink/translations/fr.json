@@ -15,6 +15,13 @@
         "data": {
           "home_id": "Logement"
         }
+      },
+      "reauth_confirm": {
+        "title": "Se reconnecter",
+        "description": "Home-SmartLink a refusé le mot de passe enregistré pour {email}. Saisissez le mot de passe actuel de l'application mobile.",
+        "data": {
+          "password": "Mot de passe"
+        }
       }
     },
     "error": {
@@ -24,7 +31,24 @@
       "unknown": "Erreur inattendue"
     },
     "abort": {
-      "already_configured": "Ce compte est déjà configuré"
+      "already_configured": "Ce compte est déjà configuré",
+      "wrong_account": "Ces identifiants donnent accès à un autre logement.",
+      "reauth_successful": "Ré-authentification réussie"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Options Home-SmartLink",
+        "description": "Les diagnostics demandent à la box d'interroger chaque thermostat, ce qui rafraîchit les températures mesurées (résultat environ 1 à 2 minutes plus tard). Mettez 0 pour les désactiver.",
+        "data": {
+          "scan_interval": "Intervalle d'interrogation",
+          "diagnosis_interval": "Intervalle des diagnostics"
+        }
+      }
+    },
+    "error": {
+      "diagnosis_interval_too_short": "Utilisez 0 (désactivé) ou au moins 5 minutes."
     }
   },
   "entity": {
