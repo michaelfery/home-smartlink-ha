@@ -3,8 +3,9 @@
 from __future__ import annotations
 
 import copy
+from collections.abc import Callable
 from dataclasses import dataclass, replace
-from datetime import datetime
+from datetime import date, datetime
 from enum import IntEnum
 from typing import Any
 
@@ -162,14 +163,18 @@ class Home:
     id: str
     has_gateway: bool
     rooms: tuple[Room, ...]
+    vacation_return_date: date | None
     raw: dict[str, Any]
 
     @classmethod
     def from_dict(cls, data: dict[str, Any]) -> Home:
+        vacation = _parse_datetime(data.get("vacationReturnDate"))
         return cls(
             id=str(data["_id"]),
             has_gateway=bool(data.get("hasGateway", False)),
             rooms=tuple(Room.from_dict(r) for r in data.get("rooms", [])),
+            # The app uses DateTime.MinValue (year 1) for "no vacation".
+            vacation_return_date=vacation.date() if vacation and vacation.year > 1 else None,
             raw=copy.deepcopy(data),
         )
 
@@ -179,16 +184,24 @@ class Home:
                 return room
         raise KeyError(f"No room {number} in home")
 
-    def with_room_settings(self, number: int, settings: HeaterSettings) -> Home:
-        """Return a copy of the home where one room has new heater settings."""
+    def with_room_raw(self, number: int, update: Callable[[dict[str, Any]], None]) -> Home:
+        """Return a copy of the home where `update` edited one raw room document."""
         raw = copy.deepcopy(self.raw)
         for room in raw.get("rooms", []):
             if int(room["roomNumber"]) == number:
-                room["heaterSettings"] = {**room["heaterSettings"], **settings.to_dict()}
+                update(room)
                 break
         else:
             raise KeyError(f"No room {number} in home")
         return Home.from_dict(raw)
+
+    def with_room_settings(self, number: int, settings: HeaterSettings) -> Home:
+        """Return a copy of the home where one room has new heater settings."""
+
+        def update(room: dict[str, Any]) -> None:
+            room["heaterSettings"] = {**room["heaterSettings"], **settings.to_dict()}
+
+        return self.with_room_raw(number, update)
 
     def to_update_payload(self) -> dict[str, Any]:
         """Body of `PUT homes/`: the document without server-managed timestamps."""

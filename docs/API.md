@@ -189,80 +189,93 @@ other opens. The PUT body is then identical to the previous GET.
 The app also logs every notify payload to logcat (`DOTNET: sending MQTT...` followed by the
 JSON). Despite the label, the transport is the HTTPS `device/notify` call above.
 
-### 5.1 `action` frame (64 bytes, deterministic)
+### 5.1 Frames (source: decompiled app, 2026-10-22)
 
-The same state always gives the same bytes (04 = 08 = 11). The frame is **not encrypted**.
+The app's .NET assemblies still contain IL. Decompiling `SmartLink.Core`, `SmartKit` and
+`SmartLink.Droid` with ILSpy gave the exact encoders (`SmartKit.PayloadBuilder`,
+`SmartLink.Core.Model.DTO.RoomDescriptor`, `HomeExtension`). The earlier
+reverse-engineered rules were consistent with them. **All 43 captured room frames and `tests`
+strings are reproduced byte for byte** (`tests/client/test_frame.py`).
 
-```text
-offset  0      : 0x01                    constant in all 33 samples (frame type?)
-offset  1..4   : uint32 LE "state word"  (see below)
-offset  5      : roomNumber              (0 → 00, 1 → 01; capture 17)
-offset  6..7   : 00 00
-offset  8..    : one 4-byte group per program event of that room
-next byte      : roomNumber again        (byte 44 with 9 events; 00 for room 0, 01 for room 1)
-rest           : zero padding to 64 bytes
-```
+**Room frame (64 bytes).** Bytes 0-7 are a little-endian 64-bit word:
 
-**Validation:** an encoder built from these rules reproduces **38/38 captured frames
-byte for byte** (3 rooms, 4 modes, Program with ecopilot on and off, set points 13.5 to 30,
-recurring and one-off events; captures 04-11, 17-19, 21-23).
+| Bits | Field |
+|---|---|
+| 0-7 | `1` (frame type) |
+| 12 | open-window detection (`openWindowsDetectionEnabled`) |
+| 14-16 | device mode: 0 Stop, 1 Antifreeze, 2 Economy, 3 Standard, 4 Program, 7 Ecopilot |
+| 21-26 | eco set point × 2 |
+| 27-32 | comfort set point × 2 |
+| 33-39 | days until `vacationReturnDate` (0 if none or past, max 227) |
+| 40-47 | room number |
 
-**State word** (bytes 1-4 as a little-endian uint32), observed values for room 0:
+The device mode and set points come from the room (`RoomDescriptor`):
 
-| Capture | State | Bytes 1-4 | uint32 LE |
+| `currentMode` | Device mode | eco × 2 | comfort × 2 |
 |---|---|---|---|
-| 08 | Manual 19 | `d0 40 33 01` | `0x013340d0` |
-| 10 | Manual 19.5 | `d0 40 3b 01` | `0x013b40d0` |
-| 09 | Manual 15.5 | `d0 40 fb 00` | `0x00fb40d0` |
-| 05 | Stop | `10 40 e3 00` | `0x00e34010` |
-| 06 | Antifreeze | `50 40 e3 00` | `0x00e34050` |
-| 07 | Program | `d0 e1 3b 01` | `0x013be1d0` |
+| Stop | 0 | 26 | 28 |
+| Antifreeze | 1 | 26 | 28 |
+| Manual (set point 13.0) | 2 | 26 | `standardValue` × 2 |
+| Manual (other set point) | 3 | 26 | `manualValue` × 2 |
+| Program, `ecopilotEnabled` false | 4 | `economyValue` × 2 | `standardValue` × 2 |
+| Program, `ecopilotEnabled` true | 7 | `economyValue` × 2 | `standardValue` × 2 |
 
-- **Bits 16-31 = set point**: `((T * 2) << 3) | 0b011`. Checked on 20 values from 13.5
-  to 30 (capture 19). Stop and Antifreeze carry 227 (= 14 °C) whatever `manualValue` is.
-  Program carries **`standardValue`**: in 07 and 18 the Cuisine had `manualValue` 19 and
-  `standardValue` 19.5, and the frame encoded 19.5. Room 2 (21) encoded 20 = its
-  `standardValue`.
-- **Byte 1**: `0x10` Stop, `0x50` Antifreeze, `0xd0` Manual. In Program:
-  - `0xd0` for room 0 and room 1, both with `ecopilotEnabled` true (07, 18, 23);
-  - `0x10` for room 2, with `ecopilotEnabled` false (21).
+Rooms whose `economyValue` is 65 drive a boiler relay. For them, the set points are 63/63 and
+the modes become Stop → 2, Antifreeze → 1, Manual → 3, Program → 4.
 
-  Rule used: **Program → `0xd0` if `ecopilotEnabled` else `0x10`**. The three rooms were in
-  the same program time slot and the same mode, so ecopilot is the only differing room
-  attribute. Consistent with 3 rooms, but not proven on a room where only ecopilot is
-  toggled.
-- **Byte 2**: `0x40`, except `0xe1` in Program. It is the same at 18:50 and 19:14 local time
-  (07, 18), so it is a constant of the mode, not the time of day.
+Bytes 8-43 hold one 4-byte little-endian word per program event, in document order:
 
-**Program event groups** (bytes 8+, matched one-to-one with `rooms[0].events`, capture 02/08):
+| Bits | Field |
+|---|---|
+| 0-2 | event `mode` (1 Standard, 2 Boost, 3 Fan) |
+| 3-6 | `eventID` |
+| 7 | `1` |
+| 8-14 | `reccurency` (bit 0 = Monday ... bit 6 = Sunday) |
+| 15 | `1` |
+| 16-23 | start, in 10-minute slots (truncated) |
+| 24-31 | end, in 10-minute slots |
 
-```text
-byte 0 = 0x80 | (eventID << 3) | mode
-byte 1 = 0x80 | reccurency          (7-bit mask, presumably weekdays: 0 → 0x80, 127 → 0xff; capture 21)
-byte 2 = start time in 10-minute slots  (5:30 → 33 = 0x21)
-byte 3 = end time in 10-minute slots    (22:00 → 132 = 0x84)
-```
+Byte 44 is the room number again; the rest is zero.
+
+**Home frame (512 bytes).** 8 slots of 64 bytes, room *n* at offset `n × 64`. Unused slots
+start with `0xFF`.
+
+**When each frame is used** (`device/notify`, then `PUT homes/` in both cases):
+
+| App screen | Field | Content |
+|---|---|---|
+| Room screen and room editor (mode, set point, eco/comfort, programming preference, open window) | `action` | room frame; `description` = `cockpit room <n> => mode <Mode>, manuelSP:<v>)` |
+| Program editor (slot hours, days, mode) and "whole home" commands | `payload` | home frame; `description` null, or a label for whole-home modes |
 
 ### 5.2 `tests` field
 
-One regex per room, all rooms in home order, joined by a single space:
-`R<room>D[0-9]M<device mode>S[0-9]C<set points>A[0-9]{1,3}J[0-9]{1,3}W[0-9]{1,3}M[0-9]{1,3}Y[0-9]{1,3}`.
-It describes the status string expected from each thermostat (same format as
-`deviceStatus`). **Whether the server requires or checks it was not observed.**
+`HomeExtension.BuildTest`: one regex per **thermostat** (a room with two thermostats gets two
+identical lines), rooms in document order, rooms without devices skipped, joined by spaces:
+`R<room>D[0-9]M<device mode>S[0-9]C<sp>A[0-9]{1,3}J[0-9]{1,3}W[0-9]{1,3}M[0-9]{1,3}Y[0-9]{1,3}`.
+Here `<sp>` is `([0-9]{2})` for device modes 0 and 1, and `(<eco × 2>|<comfort × 2>)` otherwise,
+using the values in the table above. Whether the server checks it was not observed.
 
-| Room state (`currentMode`) | Device mode `M` | `C` part |
-|---|---|---|
-| Stop (1) | `0` | `([0-9]{2})` |
-| Antifreeze (2) | `1` | `([0-9]{2})` |
-| Manual (3) | `3` | `(26\|<manualValue × 2>)` |
-| Program (4), ecopilot on | `7` | `(<economyValue × 2>\|<standardValue × 2>)` |
-| Program (4), ecopilot off | `4` | same as above |
+### 5.3 Weekly program
 
-These rules reproduce all 38 captured `tests` strings (checked in `tests/client/test_frame.py`).
-The device mode codes are also the `M` values reported by `deviceStatus`.
+From `ProgramRange`, `Room` and `EcoPilotRoomExtension`:
 
-Not understood: the constant `26` (13 °C) in Manual. It was only observed on rooms with
-ecopilot on and `economyValue` 15.5, so it could also be derived from one of these.
+- A room in Program mode heats at **`standardValue` while one of its slots is active,
+  `economyValue` otherwise** (`Room.CurrentProgrammTemperature`).
+- A slot is active when the current weekday is in its `reccurency` mask and
+  `start <= now <= end`, comparing minutes, in the phone's local time.
+- Which slots count depends on `ecopilotEnabled`, the "Programming preference" of the room
+  editor:
+  - **Advanced** (false): `events[0:6]`, the six slots of the calendar screen, each with its
+    own days;
+  - **Simplified** (true): `events[6:9]`, i.e. Morning (`eventID` 7), Day (9) and Evening (8),
+    each with its own days. Day always spans from the end of Morning to the start of Evening.
+- In Stop and Antifreeze, the app displays a set point of 7 °C.
+- Editor rules:
+  - eco between 13 and 19 °C, comfort between 13 and 30 °C, eco ≤ comfort − 0.5;
+  - an Advanced slot must end after it starts, and a Fan slot lasts at most 2 h;
+  - Simplified: Morning and Evening must not be reversed, and Morning must end before Evening
+    starts.
+- Switching the programming preference only flips `ecopilotEnabled`; no slot is reset.
 
 ## 6. Errors observed
 
@@ -282,12 +295,7 @@ expired or invalid token, box offline, malformed command, rate limiting.
      server rate limit).
 2. **Token lifetime**: opaque token, no expiry information, no refresh endpoint observed.
    We don't know when it expires or what an expired-token response looks like.
-3. **`action` frame**: the rules reproduce all 34 samples, but some fields are not
-   understood:
-   - the meaning of byte 0;
-   - Program-mode byte 1 (the `ecopilotEnabled` hypothesis).
-
-   Not tested: rooms with a number of events other than 9.
+3. **Frames**: fully specified by the decompiled app (§5.1).
 4. **Whether both requests are needed**: does `notify` alone drive the heater? Does `PUT homes`
    alone? The app always sends both.
 5. **Concurrency**: `PUT homes/` replaces the whole document, so a write from Home Assistant

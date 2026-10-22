@@ -25,7 +25,15 @@ from typing import Any
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from har_extract import DEFAULT_HOST, EMAIL_RE, HEX24_RE, Anonymizer
 
-ROOM_KEYS = ("roomNumber", "name", "ecopilotEnabled", "heaterSettings", "events")
+ROOM_KEYS = (
+    "roomNumber",
+    "name",
+    "accessories",
+    "ecopilotEnabled",
+    "openWindowsDetectionEnabled",
+    "heaterSettings",
+    "events",
+)
 
 
 def load_entries(path: Path) -> list[dict[str, Any]]:
@@ -82,6 +90,7 @@ def main() -> int:
                 {
                     "capture": har.stem,
                     "home_id": home["_id"],
+                    "vacationReturnDate": home.get("vacationReturnDate"),
                     "rooms": [{k: r[k] for k in ROOM_KEYS} for r in home["rooms"]],
                     **notify,
                 }

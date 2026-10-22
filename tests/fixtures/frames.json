@@ -2,11 +2,21 @@
   {
     "capture": "04_thermostat_detail",
     "home_id": "<ID_2>",
+    "vacationReturnDate": "0001-01-01T00:00:00.000Z",
     "rooms": [
       {
         "roomNumber": 0,
         "name": "Cuisine",
+        "accessories": [
+          {
+            "header": "<DEVICE_1>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-01-24T17:33:11.000Z"
+          }
+        ],
         "ecopilotEnabled": true,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 19.0,
           "economyValue": 15.5,
@@ -101,7 +111,16 @@
       {
         "roomNumber": 1,
         "name": "Salon",
+        "accessories": [
+          {
+            "header": "<DEVICE_2>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-02-01T10:17:45.000Z"
+          }
+        ],
         "ecopilotEnabled": true,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 19.5,
           "economyValue": 15.5,
@@ -196,7 +215,16 @@
       {
         "roomNumber": 2,
         "name": "Salle de bain du bas",
+        "accessories": [
+          {
+            "header": "<DEVICE_3>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-07-08T07:07:38.000Z"
+          }
+        ],
         "ecopilotEnabled": false,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 20.0,
           "economyValue": 15.5,
@@ -297,11 +325,21 @@
   {
     "capture": "05_mode_stop",
     "home_id": "<ID_2>",
+    "vacationReturnDate": "0001-01-01T00:00:00.000Z",
     "rooms": [
       {
         "roomNumber": 0,
         "name": "Cuisine",
+        "accessories": [
+          {
+            "header": "<DEVICE_1>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-01-24T17:33:11.000Z"
+          }
+        ],
         "ecopilotEnabled": true,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 19.0,
           "economyValue": 15.5,
@@ -396,7 +434,16 @@
       {
         "roomNumber": 1,
         "name": "Salon",
+        "accessories": [
+          {
+            "header": "<DEVICE_2>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-02-01T10:17:45.000Z"
+          }
+        ],
         "ecopilotEnabled": true,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 19.5,
           "economyValue": 15.5,
@@ -491,7 +538,16 @@
       {
         "roomNumber": 2,
         "name": "Salle de bain du bas",
+        "accessories": [
+          {
+            "header": "<DEVICE_3>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-07-08T07:07:38.000Z"
+          }
+        ],
         "ecopilotEnabled": false,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 20.0,
           "economyValue": 15.5,
@@ -592,11 +648,21 @@
   {
     "capture": "06_mode_frost",
     "home_id": "<ID_2>",
+    "vacationReturnDate": "0001-01-01T00:00:00.000Z",
     "rooms": [
       {
         "roomNumber": 0,
         "name": "Cuisine",
+        "accessories": [
+          {
+            "header": "<DEVICE_1>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-01-24T17:33:11.000Z"
+          }
+        ],
         "ecopilotEnabled": true,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 19.0,
           "economyValue": 15.5,
@@ -691,7 +757,16 @@
       {
         "roomNumber": 1,
         "name": "Salon",
+        "accessories": [
+          {
+            "header": "<DEVICE_2>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-02-01T10:17:45.000Z"
+          }
+        ],
         "ecopilotEnabled": true,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 19.5,
           "economyValue": 15.5,
@@ -786,7 +861,16 @@
       {
         "roomNumber": 2,
         "name": "Salle de bain du bas",
+        "accessories": [
+          {
+            "header": "<DEVICE_3>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-07-08T07:07:38.000Z"
+          }
+        ],
         "ecopilotEnabled": false,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 20.0,
           "economyValue": 15.5,
@@ -887,11 +971,21 @@
   {
     "capture": "07_mode_prog",
     "home_id": "<ID_2>",
+    "vacationReturnDate": "0001-01-01T00:00:00.000Z",
     "rooms": [
       {
         "roomNumber": 0,
         "name": "Cuisine",
+        "accessories": [
+          {
+            "header": "<DEVICE_1>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-01-24T17:33:11.000Z"
+          }
+        ],
         "ecopilotEnabled": true,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 19.0,
           "economyValue": 15.5,
@@ -986,7 +1080,16 @@
       {
         "roomNumber": 1,
         "name": "Salon",
+        "accessories": [
+          {
+            "header": "<DEVICE_2>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-02-01T10:17:45.000Z"
+          }
+        ],
         "ecopilotEnabled": true,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 19.5,
           "economyValue": 15.5,
@@ -1081,7 +1184,16 @@
       {
         "roomNumber": 2,
         "name": "Salle de bain du bas",
+        "accessories": [
+          {
+            "header": "<DEVICE_3>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-07-08T07:07:38.000Z"
+          }
+        ],
         "ecopilotEnabled": false,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 20.0,
           "economyValue": 15.5,
@@ -1182,11 +1294,21 @@
   {
     "capture": "08_mode_manual",
     "home_id": "<ID_2>",
+    "vacationReturnDate": "0001-01-01T00:00:00.000Z",
     "rooms": [
       {
         "roomNumber": 0,
         "name": "Cuisine",
+        "accessories": [
+          {
+            "header": "<DEVICE_1>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-01-24T17:33:11.000Z"
+          }
+        ],
         "ecopilotEnabled": true,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 19.0,
           "economyValue": 15.5,
@@ -1281,7 +1403,16 @@
       {
         "roomNumber": 1,
         "name": "Salon",
+        "accessories": [
+          {
+            "header": "<DEVICE_2>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-02-01T10:17:45.000Z"
+          }
+        ],
         "ecopilotEnabled": true,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 19.5,
           "economyValue": 15.5,
@@ -1376,7 +1507,16 @@
       {
         "roomNumber": 2,
         "name": "Salle de bain du bas",
+        "accessories": [
+          {
+            "header": "<DEVICE_3>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-07-08T07:07:38.000Z"
+          }
+        ],
         "ecopilotEnabled": false,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 20.0,
           "economyValue": 15.5,
@@ -1477,11 +1617,21 @@
   {
     "capture": "09_preset_eco",
     "home_id": "<ID_2>",
+    "vacationReturnDate": "0001-01-01T00:00:00.000Z",
     "rooms": [
       {
         "roomNumber": 0,
         "name": "Cuisine",
+        "accessories": [
+          {
+            "header": "<DEVICE_1>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-01-24T17:33:11.000Z"
+          }
+        ],
         "ecopilotEnabled": true,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 15.5,
           "economyValue": 15.5,
@@ -1576,7 +1726,16 @@
       {
         "roomNumber": 1,
         "name": "Salon",
+        "accessories": [
+          {
+            "header": "<DEVICE_2>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-02-01T10:17:45.000Z"
+          }
+        ],
         "ecopilotEnabled": true,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 19.5,
           "economyValue": 15.5,
@@ -1671,7 +1830,16 @@
       {
         "roomNumber": 2,
         "name": "Salle de bain du bas",
+        "accessories": [
+          {
+            "header": "<DEVICE_3>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-07-08T07:07:38.000Z"
+          }
+        ],
         "ecopilotEnabled": false,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 20.0,
           "economyValue": 15.5,
@@ -1772,11 +1940,21 @@
   {
     "capture": "10_preset_comfort",
     "home_id": "<ID_2>",
+    "vacationReturnDate": "0001-01-01T00:00:00.000Z",
     "rooms": [
       {
         "roomNumber": 0,
         "name": "Cuisine",
+        "accessories": [
+          {
+            "header": "<DEVICE_1>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-01-24T17:33:11.000Z"
+          }
+        ],
         "ecopilotEnabled": true,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 19.5,
           "economyValue": 15.5,
@@ -1871,7 +2049,16 @@
       {
         "roomNumber": 1,
         "name": "Salon",
+        "accessories": [
+          {
+            "header": "<DEVICE_2>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-02-01T10:17:45.000Z"
+          }
+        ],
         "ecopilotEnabled": true,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 19.5,
           "economyValue": 15.5,
@@ -1966,7 +2153,16 @@
       {
         "roomNumber": 2,
         "name": "Salle de bain du bas",
+        "accessories": [
+          {
+            "header": "<DEVICE_3>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-07-08T07:07:38.000Z"
+          }
+        ],
         "ecopilotEnabled": false,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 20.0,
           "economyValue": 15.5,
@@ -2067,11 +2263,21 @@
   {
     "capture": "11_setpoint_dial",
     "home_id": "<ID_2>",
+    "vacationReturnDate": "0001-01-01T00:00:00.000Z",
     "rooms": [
       {
         "roomNumber": 0,
         "name": "Cuisine",
+        "accessories": [
+          {
+            "header": "<DEVICE_1>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-01-24T17:33:11.000Z"
+          }
+        ],
         "ecopilotEnabled": true,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 19.0,
           "economyValue": 15.5,
@@ -2166,7 +2372,16 @@
       {
         "roomNumber": 1,
         "name": "Salon",
+        "accessories": [
+          {
+            "header": "<DEVICE_2>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-02-01T10:17:45.000Z"
+          }
+        ],
         "ecopilotEnabled": true,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 19.5,
           "economyValue": 15.5,
@@ -2261,7 +2476,16 @@
       {
         "roomNumber": 2,
         "name": "Salle de bain du bas",
+        "accessories": [
+          {
+            "header": "<DEVICE_3>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-07-08T07:07:38.000Z"
+          }
+        ],
         "ecopilotEnabled": false,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 20.0,
           "economyValue": 15.5,
@@ -2362,11 +2586,21 @@
   {
     "capture": "17_room1_stop_then_manual",
     "home_id": "<ID_2>",
+    "vacationReturnDate": "0001-01-01T00:00:00.000Z",
     "rooms": [
       {
         "roomNumber": 0,
         "name": "Cuisine",
+        "accessories": [
+          {
+            "header": "<DEVICE_1>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-01-24T17:33:11.000Z"
+          }
+        ],
         "ecopilotEnabled": true,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 19.0,
           "economyValue": 15.5,
@@ -2461,7 +2695,16 @@
       {
         "roomNumber": 1,
         "name": "Salon",
+        "accessories": [
+          {
+            "header": "<DEVICE_2>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-02-01T10:17:45.000Z"
+          }
+        ],
         "ecopilotEnabled": true,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 19.5,
           "economyValue": 15.5,
@@ -2556,7 +2799,16 @@
       {
         "roomNumber": 2,
         "name": "Salle de bain du bas",
+        "accessories": [
+          {
+            "header": "<DEVICE_3>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-07-08T07:07:38.000Z"
+          }
+        ],
         "ecopilotEnabled": false,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 20.0,
           "economyValue": 15.5,
@@ -2657,11 +2909,21 @@
   {
     "capture": "17_room1_stop_then_manual",
     "home_id": "<ID_2>",
+    "vacationReturnDate": "0001-01-01T00:00:00.000Z",
     "rooms": [
       {
         "roomNumber": 0,
         "name": "Cuisine",
+        "accessories": [
+          {
+            "header": "<DEVICE_1>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-01-24T17:33:11.000Z"
+          }
+        ],
         "ecopilotEnabled": true,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 19.0,
           "economyValue": 15.5,
@@ -2756,7 +3018,16 @@
       {
         "roomNumber": 1,
         "name": "Salon",
+        "accessories": [
+          {
+            "header": "<DEVICE_2>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-02-01T10:17:45.000Z"
+          }
+        ],
         "ecopilotEnabled": true,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 19.5,
           "economyValue": 15.5,
@@ -2851,7 +3122,16 @@
       {
         "roomNumber": 2,
         "name": "Salle de bain du bas",
+        "accessories": [
+          {
+            "header": "<DEVICE_3>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-07-08T07:07:38.000Z"
+          }
+        ],
         "ecopilotEnabled": false,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 20.0,
           "economyValue": 15.5,
@@ -2952,11 +3232,21 @@
   {
     "capture": "18_room0_prog_later",
     "home_id": "<ID_2>",
+    "vacationReturnDate": "0001-01-01T00:00:00.000Z",
     "rooms": [
       {
         "roomNumber": 0,
         "name": "Cuisine",
+        "accessories": [
+          {
+            "header": "<DEVICE_1>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-01-24T17:33:11.000Z"
+          }
+        ],
         "ecopilotEnabled": true,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 19.0,
           "economyValue": 15.5,
@@ -3051,7 +3341,16 @@
       {
         "roomNumber": 1,
         "name": "Salon",
+        "accessories": [
+          {
+            "header": "<DEVICE_2>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-02-01T10:17:45.000Z"
+          }
+        ],
         "ecopilotEnabled": true,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 19.5,
           "economyValue": 15.5,
@@ -3146,7 +3445,16 @@
       {
         "roomNumber": 2,
         "name": "Salle de bain du bas",
+        "accessories": [
+          {
+            "header": "<DEVICE_3>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-07-08T07:07:38.000Z"
+          }
+        ],
         "ecopilotEnabled": false,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 20.0,
           "economyValue": 15.5,
@@ -3247,11 +3555,21 @@
   {
     "capture": "18_room0_prog_later",
     "home_id": "<ID_2>",
+    "vacationReturnDate": "0001-01-01T00:00:00.000Z",
     "rooms": [
       {
         "roomNumber": 0,
         "name": "Cuisine",
+        "accessories": [
+          {
+            "header": "<DEVICE_1>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-01-24T17:33:11.000Z"
+          }
+        ],
         "ecopilotEnabled": true,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 19.0,
           "economyValue": 15.5,
@@ -3346,7 +3664,16 @@
       {
         "roomNumber": 1,
         "name": "Salon",
+        "accessories": [
+          {
+            "header": "<DEVICE_2>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-02-01T10:17:45.000Z"
+          }
+        ],
         "ecopilotEnabled": true,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 19.5,
           "economyValue": 15.5,
@@ -3441,7 +3768,16 @@
       {
         "roomNumber": 2,
         "name": "Salle de bain du bas",
+        "accessories": [
+          {
+            "header": "<DEVICE_3>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-07-08T07:07:38.000Z"
+          }
+        ],
         "ecopilotEnabled": false,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 20.0,
           "economyValue": 15.5,
@@ -3542,11 +3878,21 @@
   {
     "capture": "18_room0_prog_later",
     "home_id": "<ID_2>",
+    "vacationReturnDate": "0001-01-01T00:00:00.000Z",
     "rooms": [
       {
         "roomNumber": 0,
         "name": "Cuisine",
+        "accessories": [
+          {
+            "header": "<DEVICE_1>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-01-24T17:33:11.000Z"
+          }
+        ],
         "ecopilotEnabled": true,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 19.0,
           "economyValue": 15.5,
@@ -3641,7 +3987,16 @@
       {
         "roomNumber": 1,
         "name": "Salon",
+        "accessories": [
+          {
+            "header": "<DEVICE_2>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-02-01T10:17:45.000Z"
+          }
+        ],
         "ecopilotEnabled": true,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 19.5,
           "economyValue": 15.5,
@@ -3736,7 +4091,16 @@
       {
         "roomNumber": 2,
         "name": "Salle de bain du bas",
+        "accessories": [
+          {
+            "header": "<DEVICE_3>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-07-08T07:07:38.000Z"
+          }
+        ],
         "ecopilotEnabled": false,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 20.0,
           "economyValue": 15.5,
@@ -3837,11 +4201,21 @@
   {
     "capture": "19_room0_setpoint_range",
     "home_id": "<ID_2>",
+    "vacationReturnDate": "0001-01-01T00:00:00.000Z",
     "rooms": [
       {
         "roomNumber": 0,
         "name": "Cuisine",
+        "accessories": [
+          {
+            "header": "<DEVICE_1>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-01-24T17:33:11.000Z"
+          }
+        ],
         "ecopilotEnabled": true,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 19.0,
           "economyValue": 15.5,
@@ -3936,7 +4310,16 @@
       {
         "roomNumber": 1,
         "name": "Salon",
+        "accessories": [
+          {
+            "header": "<DEVICE_2>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-02-01T10:17:45.000Z"
+          }
+        ],
         "ecopilotEnabled": true,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 19.5,
           "economyValue": 15.5,
@@ -4031,7 +4414,16 @@
       {
         "roomNumber": 2,
         "name": "Salle de bain du bas",
+        "accessories": [
+          {
+            "header": "<DEVICE_3>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-07-08T07:07:38.000Z"
+          }
+        ],
         "ecopilotEnabled": false,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 20.0,
           "economyValue": 15.5,
@@ -4132,11 +4524,21 @@
   {
     "capture": "19_room0_setpoint_range",
     "home_id": "<ID_2>",
+    "vacationReturnDate": "0001-01-01T00:00:00.000Z",
     "rooms": [
       {
         "roomNumber": 0,
         "name": "Cuisine",
+        "accessories": [
+          {
+            "header": "<DEVICE_1>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-01-24T17:33:11.000Z"
+          }
+        ],
         "ecopilotEnabled": true,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 17.0,
           "economyValue": 15.5,
@@ -4231,7 +4633,16 @@
       {
         "roomNumber": 1,
         "name": "Salon",
+        "accessories": [
+          {
+            "header": "<DEVICE_2>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-02-01T10:17:45.000Z"
+          }
+        ],
         "ecopilotEnabled": true,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 19.5,
           "economyValue": 15.5,
@@ -4326,7 +4737,16 @@
       {
         "roomNumber": 2,
         "name": "Salle de bain du bas",
+        "accessories": [
+          {
+            "header": "<DEVICE_3>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-07-08T07:07:38.000Z"
+          }
+        ],
         "ecopilotEnabled": false,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 20.0,
           "economyValue": 15.5,
@@ -4427,11 +4847,21 @@
   {
     "capture": "19_room0_setpoint_range",
     "home_id": "<ID_2>",
+    "vacationReturnDate": "0001-01-01T00:00:00.000Z",
     "rooms": [
       {
         "roomNumber": 0,
         "name": "Cuisine",
+        "accessories": [
+          {
+            "header": "<DEVICE_1>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-01-24T17:33:11.000Z"
+          }
+        ],
         "ecopilotEnabled": true,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 15.5,
           "economyValue": 15.5,
@@ -4526,7 +4956,16 @@
       {
         "roomNumber": 1,
         "name": "Salon",
+        "accessories": [
+          {
+            "header": "<DEVICE_2>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-02-01T10:17:45.000Z"
+          }
+        ],
         "ecopilotEnabled": true,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 19.5,
           "economyValue": 15.5,
@@ -4621,7 +5060,16 @@
       {
         "roomNumber": 2,
         "name": "Salle de bain du bas",
+        "accessories": [
+          {
+            "header": "<DEVICE_3>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-07-08T07:07:38.000Z"
+          }
+        ],
         "ecopilotEnabled": false,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 20.0,
           "economyValue": 15.5,
@@ -4722,11 +5170,21 @@
   {
     "capture": "19_room0_setpoint_range",
     "home_id": "<ID_2>",
+    "vacationReturnDate": "0001-01-01T00:00:00.000Z",
     "rooms": [
       {
         "roomNumber": 0,
         "name": "Cuisine",
+        "accessories": [
+          {
+            "header": "<DEVICE_1>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-01-24T17:33:11.000Z"
+          }
+        ],
         "ecopilotEnabled": true,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 13.5,
           "economyValue": 15.5,
@@ -4821,7 +5279,16 @@
       {
         "roomNumber": 1,
         "name": "Salon",
+        "accessories": [
+          {
+            "header": "<DEVICE_2>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-02-01T10:17:45.000Z"
+          }
+        ],
         "ecopilotEnabled": true,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 19.5,
           "economyValue": 15.5,
@@ -4916,7 +5383,16 @@
       {
         "roomNumber": 2,
         "name": "Salle de bain du bas",
+        "accessories": [
+          {
+            "header": "<DEVICE_3>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-07-08T07:07:38.000Z"
+          }
+        ],
         "ecopilotEnabled": false,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 20.0,
           "economyValue": 15.5,
@@ -5017,11 +5493,21 @@
   {
     "capture": "19_room0_setpoint_range",
     "home_id": "<ID_2>",
+    "vacationReturnDate": "0001-01-01T00:00:00.000Z",
     "rooms": [
       {
         "roomNumber": 0,
         "name": "Cuisine",
+        "accessories": [
+          {
+            "header": "<DEVICE_1>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-01-24T17:33:11.000Z"
+          }
+        ],
         "ecopilotEnabled": true,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 13.5,
           "economyValue": 15.5,
@@ -5116,7 +5602,16 @@
       {
         "roomNumber": 1,
         "name": "Salon",
+        "accessories": [
+          {
+            "header": "<DEVICE_2>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-02-01T10:17:45.000Z"
+          }
+        ],
         "ecopilotEnabled": true,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 19.5,
           "economyValue": 15.5,
@@ -5211,7 +5706,16 @@
       {
         "roomNumber": 2,
         "name": "Salle de bain du bas",
+        "accessories": [
+          {
+            "header": "<DEVICE_3>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-07-08T07:07:38.000Z"
+          }
+        ],
         "ecopilotEnabled": false,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 20.0,
           "economyValue": 15.5,
@@ -5312,11 +5816,21 @@
   {
     "capture": "19_room0_setpoint_range",
     "home_id": "<ID_2>",
+    "vacationReturnDate": "0001-01-01T00:00:00.000Z",
     "rooms": [
       {
         "roomNumber": 0,
         "name": "Cuisine",
+        "accessories": [
+          {
+            "header": "<DEVICE_1>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-01-24T17:33:11.000Z"
+          }
+        ],
         "ecopilotEnabled": true,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 15.0,
           "economyValue": 15.5,
@@ -5411,7 +5925,16 @@
       {
         "roomNumber": 1,
         "name": "Salon",
+        "accessories": [
+          {
+            "header": "<DEVICE_2>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-02-01T10:17:45.000Z"
+          }
+        ],
         "ecopilotEnabled": true,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 19.5,
           "economyValue": 15.5,
@@ -5506,7 +6029,16 @@
       {
         "roomNumber": 2,
         "name": "Salle de bain du bas",
+        "accessories": [
+          {
+            "header": "<DEVICE_3>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-07-08T07:07:38.000Z"
+          }
+        ],
         "ecopilotEnabled": false,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 20.0,
           "economyValue": 15.5,
@@ -5607,11 +6139,21 @@
   {
     "capture": "19_room0_setpoint_range",
     "home_id": "<ID_2>",
+    "vacationReturnDate": "0001-01-01T00:00:00.000Z",
     "rooms": [
       {
         "roomNumber": 0,
         "name": "Cuisine",
+        "accessories": [
+          {
+            "header": "<DEVICE_1>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-01-24T17:33:11.000Z"
+          }
+        ],
         "ecopilotEnabled": true,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 17.0,
           "economyValue": 15.5,
@@ -5706,7 +6248,16 @@
       {
         "roomNumber": 1,
         "name": "Salon",
+        "accessories": [
+          {
+            "header": "<DEVICE_2>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-02-01T10:17:45.000Z"
+          }
+        ],
         "ecopilotEnabled": true,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 19.5,
           "economyValue": 15.5,
@@ -5801,7 +6352,16 @@
       {
         "roomNumber": 2,
         "name": "Salle de bain du bas",
+        "accessories": [
+          {
+            "header": "<DEVICE_3>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-07-08T07:07:38.000Z"
+          }
+        ],
         "ecopilotEnabled": false,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 20.0,
           "economyValue": 15.5,
@@ -5902,11 +6462,21 @@
   {
     "capture": "19_room0_setpoint_range",
     "home_id": "<ID_2>",
+    "vacationReturnDate": "0001-01-01T00:00:00.000Z",
     "rooms": [
       {
         "roomNumber": 0,
         "name": "Cuisine",
+        "accessories": [
+          {
+            "header": "<DEVICE_1>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-01-24T17:33:11.000Z"
+          }
+        ],
         "ecopilotEnabled": true,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 19.0,
           "economyValue": 15.5,
@@ -6001,7 +6571,16 @@
       {
         "roomNumber": 1,
         "name": "Salon",
+        "accessories": [
+          {
+            "header": "<DEVICE_2>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-02-01T10:17:45.000Z"
+          }
+        ],
         "ecopilotEnabled": true,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 19.5,
           "economyValue": 15.5,
@@ -6096,7 +6675,16 @@
       {
         "roomNumber": 2,
         "name": "Salle de bain du bas",
+        "accessories": [
+          {
+            "header": "<DEVICE_3>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-07-08T07:07:38.000Z"
+          }
+        ],
         "ecopilotEnabled": false,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 20.0,
           "economyValue": 15.5,
@@ -6197,11 +6785,21 @@
   {
     "capture": "19_room0_setpoint_range",
     "home_id": "<ID_2>",
+    "vacationReturnDate": "0001-01-01T00:00:00.000Z",
     "rooms": [
       {
         "roomNumber": 0,
         "name": "Cuisine",
+        "accessories": [
+          {
+            "header": "<DEVICE_1>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-01-24T17:33:11.000Z"
+          }
+        ],
         "ecopilotEnabled": true,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 21.0,
           "economyValue": 15.5,
@@ -6296,7 +6894,16 @@
       {
         "roomNumber": 1,
         "name": "Salon",
+        "accessories": [
+          {
+            "header": "<DEVICE_2>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-02-01T10:17:45.000Z"
+          }
+        ],
         "ecopilotEnabled": true,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 19.5,
           "economyValue": 15.5,
@@ -6391,7 +6998,16 @@
       {
         "roomNumber": 2,
         "name": "Salle de bain du bas",
+        "accessories": [
+          {
+            "header": "<DEVICE_3>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-07-08T07:07:38.000Z"
+          }
+        ],
         "ecopilotEnabled": false,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 20.0,
           "economyValue": 15.5,
@@ -6492,11 +7108,21 @@
   {
     "capture": "19_room0_setpoint_range",
     "home_id": "<ID_2>",
+    "vacationReturnDate": "0001-01-01T00:00:00.000Z",
     "rooms": [
       {
         "roomNumber": 0,
         "name": "Cuisine",
+        "accessories": [
+          {
+            "header": "<DEVICE_1>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-01-24T17:33:11.000Z"
+          }
+        ],
         "ecopilotEnabled": true,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 23.0,
           "economyValue": 15.5,
@@ -6591,7 +7217,16 @@
       {
         "roomNumber": 1,
         "name": "Salon",
+        "accessories": [
+          {
+            "header": "<DEVICE_2>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-02-01T10:17:45.000Z"
+          }
+        ],
         "ecopilotEnabled": true,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 19.5,
           "economyValue": 15.5,
@@ -6686,7 +7321,16 @@
       {
         "roomNumber": 2,
         "name": "Salle de bain du bas",
+        "accessories": [
+          {
+            "header": "<DEVICE_3>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-07-08T07:07:38.000Z"
+          }
+        ],
         "ecopilotEnabled": false,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 20.0,
           "economyValue": 15.5,
@@ -6787,11 +7431,21 @@
   {
     "capture": "19_room0_setpoint_range",
     "home_id": "<ID_2>",
+    "vacationReturnDate": "0001-01-01T00:00:00.000Z",
     "rooms": [
       {
         "roomNumber": 0,
         "name": "Cuisine",
+        "accessories": [
+          {
+            "header": "<DEVICE_1>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-01-24T17:33:11.000Z"
+          }
+        ],
         "ecopilotEnabled": true,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 24.5,
           "economyValue": 15.5,
@@ -6886,7 +7540,16 @@
       {
         "roomNumber": 1,
         "name": "Salon",
+        "accessories": [
+          {
+            "header": "<DEVICE_2>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-02-01T10:17:45.000Z"
+          }
+        ],
         "ecopilotEnabled": true,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 19.5,
           "economyValue": 15.5,
@@ -6981,7 +7644,16 @@
       {
         "roomNumber": 2,
         "name": "Salle de bain du bas",
+        "accessories": [
+          {
+            "header": "<DEVICE_3>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-07-08T07:07:38.000Z"
+          }
+        ],
         "ecopilotEnabled": false,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 20.0,
           "economyValue": 15.5,
@@ -7082,11 +7754,21 @@
   {
     "capture": "19_room0_setpoint_range",
     "home_id": "<ID_2>",
+    "vacationReturnDate": "0001-01-01T00:00:00.000Z",
     "rooms": [
       {
         "roomNumber": 0,
         "name": "Cuisine",
+        "accessories": [
+          {
+            "header": "<DEVICE_1>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-01-24T17:33:11.000Z"
+          }
+        ],
         "ecopilotEnabled": true,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 26.5,
           "economyValue": 15.5,
@@ -7181,7 +7863,16 @@
       {
         "roomNumber": 1,
         "name": "Salon",
+        "accessories": [
+          {
+            "header": "<DEVICE_2>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-02-01T10:17:45.000Z"
+          }
+        ],
         "ecopilotEnabled": true,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 19.5,
           "economyValue": 15.5,
@@ -7276,7 +7967,16 @@
       {
         "roomNumber": 2,
         "name": "Salle de bain du bas",
+        "accessories": [
+          {
+            "header": "<DEVICE_3>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-07-08T07:07:38.000Z"
+          }
+        ],
         "ecopilotEnabled": false,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 20.0,
           "economyValue": 15.5,
@@ -7377,11 +8077,21 @@
   {
     "capture": "19_room0_setpoint_range",
     "home_id": "<ID_2>",
+    "vacationReturnDate": "0001-01-01T00:00:00.000Z",
     "rooms": [
       {
         "roomNumber": 0,
         "name": "Cuisine",
+        "accessories": [
+          {
+            "header": "<DEVICE_1>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-01-24T17:33:11.000Z"
+          }
+        ],
         "ecopilotEnabled": true,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 28.5,
           "economyValue": 15.5,
@@ -7476,7 +8186,16 @@
       {
         "roomNumber": 1,
         "name": "Salon",
+        "accessories": [
+          {
+            "header": "<DEVICE_2>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-02-01T10:17:45.000Z"
+          }
+        ],
         "ecopilotEnabled": true,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 19.5,
           "economyValue": 15.5,
@@ -7571,7 +8290,16 @@
       {
         "roomNumber": 2,
         "name": "Salle de bain du bas",
+        "accessories": [
+          {
+            "header": "<DEVICE_3>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-07-08T07:07:38.000Z"
+          }
+        ],
         "ecopilotEnabled": false,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 20.0,
           "economyValue": 15.5,
@@ -7672,11 +8400,21 @@
   {
     "capture": "19_room0_setpoint_range",
     "home_id": "<ID_2>",
+    "vacationReturnDate": "0001-01-01T00:00:00.000Z",
     "rooms": [
       {
         "roomNumber": 0,
         "name": "Cuisine",
+        "accessories": [
+          {
+            "header": "<DEVICE_1>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-01-24T17:33:11.000Z"
+          }
+        ],
         "ecopilotEnabled": true,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 30.0,
           "economyValue": 15.5,
@@ -7771,7 +8509,16 @@
       {
         "roomNumber": 1,
         "name": "Salon",
+        "accessories": [
+          {
+            "header": "<DEVICE_2>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-02-01T10:17:45.000Z"
+          }
+        ],
         "ecopilotEnabled": true,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 19.5,
           "economyValue": 15.5,
@@ -7866,7 +8613,16 @@
       {
         "roomNumber": 2,
         "name": "Salle de bain du bas",
+        "accessories": [
+          {
+            "header": "<DEVICE_3>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-07-08T07:07:38.000Z"
+          }
+        ],
         "ecopilotEnabled": false,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 20.0,
           "economyValue": 15.5,
@@ -7967,11 +8723,21 @@
   {
     "capture": "19_room0_setpoint_range",
     "home_id": "<ID_2>",
+    "vacationReturnDate": "0001-01-01T00:00:00.000Z",
     "rooms": [
       {
         "roomNumber": 0,
         "name": "Cuisine",
+        "accessories": [
+          {
+            "header": "<DEVICE_1>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-01-24T17:33:11.000Z"
+          }
+        ],
         "ecopilotEnabled": true,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 27.5,
           "economyValue": 15.5,
@@ -8066,7 +8832,16 @@
       {
         "roomNumber": 1,
         "name": "Salon",
+        "accessories": [
+          {
+            "header": "<DEVICE_2>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-02-01T10:17:45.000Z"
+          }
+        ],
         "ecopilotEnabled": true,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 19.5,
           "economyValue": 15.5,
@@ -8161,7 +8936,16 @@
       {
         "roomNumber": 2,
         "name": "Salle de bain du bas",
+        "accessories": [
+          {
+            "header": "<DEVICE_3>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-07-08T07:07:38.000Z"
+          }
+        ],
         "ecopilotEnabled": false,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 20.0,
           "economyValue": 15.5,
@@ -8262,11 +9046,21 @@
   {
     "capture": "19_room0_setpoint_range",
     "home_id": "<ID_2>",
+    "vacationReturnDate": "0001-01-01T00:00:00.000Z",
     "rooms": [
       {
         "roomNumber": 0,
         "name": "Cuisine",
+        "accessories": [
+          {
+            "header": "<DEVICE_1>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-01-24T17:33:11.000Z"
+          }
+        ],
         "ecopilotEnabled": true,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 26.0,
           "economyValue": 15.5,
@@ -8361,7 +9155,16 @@
       {
         "roomNumber": 1,
         "name": "Salon",
+        "accessories": [
+          {
+            "header": "<DEVICE_2>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-02-01T10:17:45.000Z"
+          }
+        ],
         "ecopilotEnabled": true,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 19.5,
           "economyValue": 15.5,
@@ -8456,7 +9259,16 @@
       {
         "roomNumber": 2,
         "name": "Salle de bain du bas",
+        "accessories": [
+          {
+            "header": "<DEVICE_3>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-07-08T07:07:38.000Z"
+          }
+        ],
         "ecopilotEnabled": false,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 20.0,
           "economyValue": 15.5,
@@ -8557,11 +9369,21 @@
   {
     "capture": "19_room0_setpoint_range",
     "home_id": "<ID_2>",
+    "vacationReturnDate": "0001-01-01T00:00:00.000Z",
     "rooms": [
       {
         "roomNumber": 0,
         "name": "Cuisine",
+        "accessories": [
+          {
+            "header": "<DEVICE_1>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-01-24T17:33:11.000Z"
+          }
+        ],
         "ecopilotEnabled": true,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 24.0,
           "economyValue": 15.5,
@@ -8656,7 +9478,16 @@
       {
         "roomNumber": 1,
         "name": "Salon",
+        "accessories": [
+          {
+            "header": "<DEVICE_2>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-02-01T10:17:45.000Z"
+          }
+        ],
         "ecopilotEnabled": true,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 19.5,
           "economyValue": 15.5,
@@ -8751,7 +9582,16 @@
       {
         "roomNumber": 2,
         "name": "Salle de bain du bas",
+        "accessories": [
+          {
+            "header": "<DEVICE_3>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-07-08T07:07:38.000Z"
+          }
+        ],
         "ecopilotEnabled": false,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 20.0,
           "economyValue": 15.5,
@@ -8852,11 +9692,21 @@
   {
     "capture": "19_room0_setpoint_range",
     "home_id": "<ID_2>",
+    "vacationReturnDate": "0001-01-01T00:00:00.000Z",
     "rooms": [
       {
         "roomNumber": 0,
         "name": "Cuisine",
+        "accessories": [
+          {
+            "header": "<DEVICE_1>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-01-24T17:33:11.000Z"
+          }
+        ],
         "ecopilotEnabled": true,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 22.0,
           "economyValue": 15.5,
@@ -8951,7 +9801,16 @@
       {
         "roomNumber": 1,
         "name": "Salon",
+        "accessories": [
+          {
+            "header": "<DEVICE_2>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-02-01T10:17:45.000Z"
+          }
+        ],
         "ecopilotEnabled": true,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 19.5,
           "economyValue": 15.5,
@@ -9046,7 +9905,16 @@
       {
         "roomNumber": 2,
         "name": "Salle de bain du bas",
+        "accessories": [
+          {
+            "header": "<DEVICE_3>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-07-08T07:07:38.000Z"
+          }
+        ],
         "ecopilotEnabled": false,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 20.0,
           "economyValue": 15.5,
@@ -9147,11 +10015,21 @@
   {
     "capture": "19_room0_setpoint_range",
     "home_id": "<ID_2>",
+    "vacationReturnDate": "0001-01-01T00:00:00.000Z",
     "rooms": [
       {
         "roomNumber": 0,
         "name": "Cuisine",
+        "accessories": [
+          {
+            "header": "<DEVICE_1>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-01-24T17:33:11.000Z"
+          }
+        ],
         "ecopilotEnabled": true,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 20.0,
           "economyValue": 15.5,
@@ -9246,7 +10124,16 @@
       {
         "roomNumber": 1,
         "name": "Salon",
+        "accessories": [
+          {
+            "header": "<DEVICE_2>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-02-01T10:17:45.000Z"
+          }
+        ],
         "ecopilotEnabled": true,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 19.5,
           "economyValue": 15.5,
@@ -9341,7 +10228,16 @@
       {
         "roomNumber": 2,
         "name": "Salle de bain du bas",
+        "accessories": [
+          {
+            "header": "<DEVICE_3>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-07-08T07:07:38.000Z"
+          }
+        ],
         "ecopilotEnabled": false,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 20.0,
           "economyValue": 15.5,
@@ -9442,11 +10338,21 @@
   {
     "capture": "19_room0_setpoint_range",
     "home_id": "<ID_2>",
+    "vacationReturnDate": "0001-01-01T00:00:00.000Z",
     "rooms": [
       {
         "roomNumber": 0,
         "name": "Cuisine",
+        "accessories": [
+          {
+            "header": "<DEVICE_1>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-01-24T17:33:11.000Z"
+          }
+        ],
         "ecopilotEnabled": true,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 19.0,
           "economyValue": 15.5,
@@ -9541,7 +10447,16 @@
       {
         "roomNumber": 1,
         "name": "Salon",
+        "accessories": [
+          {
+            "header": "<DEVICE_2>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-02-01T10:17:45.000Z"
+          }
+        ],
         "ecopilotEnabled": true,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 19.5,
           "economyValue": 15.5,
@@ -9636,7 +10551,16 @@
       {
         "roomNumber": 2,
         "name": "Salle de bain du bas",
+        "accessories": [
+          {
+            "header": "<DEVICE_3>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-07-08T07:07:38.000Z"
+          }
+        ],
         "ecopilotEnabled": false,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 20.0,
           "economyValue": 15.5,
@@ -9737,11 +10661,21 @@
   {
     "capture": "21_room2_open_prog",
     "home_id": "<ID_2>",
+    "vacationReturnDate": "0001-01-01T00:00:00.000Z",
     "rooms": [
       {
         "roomNumber": 0,
         "name": "Cuisine",
+        "accessories": [
+          {
+            "header": "<DEVICE_1>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-01-24T17:33:11.000Z"
+          }
+        ],
         "ecopilotEnabled": true,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 19.0,
           "economyValue": 15.5,
@@ -9836,7 +10770,16 @@
       {
         "roomNumber": 1,
         "name": "Salon",
+        "accessories": [
+          {
+            "header": "<DEVICE_2>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-02-01T10:17:45.000Z"
+          }
+        ],
         "ecopilotEnabled": true,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 19.5,
           "economyValue": 15.5,
@@ -9931,7 +10874,16 @@
       {
         "roomNumber": 2,
         "name": "Salle de bain du bas",
+        "accessories": [
+          {
+            "header": "<DEVICE_3>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-07-08T07:07:38.000Z"
+          }
+        ],
         "ecopilotEnabled": false,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 20.0,
           "economyValue": 15.5,
@@ -10032,11 +10984,21 @@
   {
     "capture": "22_devices_diagnostic",
     "home_id": "<ID_2>",
+    "vacationReturnDate": "0001-01-01T00:00:00.000Z",
     "rooms": [
       {
         "roomNumber": 0,
         "name": "Cuisine",
+        "accessories": [
+          {
+            "header": "<DEVICE_1>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-01-24T17:33:11.000Z"
+          }
+        ],
         "ecopilotEnabled": true,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 19.0,
           "economyValue": 15.5,
@@ -10131,7 +11093,16 @@
       {
         "roomNumber": 1,
         "name": "Salon",
+        "accessories": [
+          {
+            "header": "<DEVICE_2>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-02-01T10:17:45.000Z"
+          }
+        ],
         "ecopilotEnabled": true,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 19.5,
           "economyValue": 15.5,
@@ -10226,7 +11197,16 @@
       {
         "roomNumber": 2,
         "name": "Salle de bain du bas",
+        "accessories": [
+          {
+            "header": "<DEVICE_3>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-07-08T07:07:38.000Z"
+          }
+        ],
         "ecopilotEnabled": false,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 20.0,
           "economyValue": 15.5,
@@ -10327,11 +11307,21 @@
   {
     "capture": "23_room1_prog",
     "home_id": "<ID_2>",
+    "vacationReturnDate": "0001-01-01T00:00:00.000Z",
     "rooms": [
       {
         "roomNumber": 0,
         "name": "Cuisine",
+        "accessories": [
+          {
+            "header": "<DEVICE_1>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-01-24T17:33:11.000Z"
+          }
+        ],
         "ecopilotEnabled": true,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 19.0,
           "economyValue": 15.5,
@@ -10426,7 +11416,16 @@
       {
         "roomNumber": 1,
         "name": "Salon",
+        "accessories": [
+          {
+            "header": "<DEVICE_2>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-02-01T10:17:45.000Z"
+          }
+        ],
         "ecopilotEnabled": true,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 19.5,
           "economyValue": 15.5,
@@ -10521,7 +11520,16 @@
       {
         "roomNumber": 2,
         "name": "Salle de bain du bas",
+        "accessories": [
+          {
+            "header": "<DEVICE_3>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-07-08T07:07:38.000Z"
+          }
+        ],
         "ecopilotEnabled": false,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 20.0,
           "economyValue": 15.5,
@@ -10622,11 +11630,21 @@
   {
     "capture": "23_room1_prog",
     "home_id": "<ID_2>",
+    "vacationReturnDate": "0001-01-01T00:00:00.000Z",
     "rooms": [
       {
         "roomNumber": 0,
         "name": "Cuisine",
+        "accessories": [
+          {
+            "header": "<DEVICE_1>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-01-24T17:33:11.000Z"
+          }
+        ],
         "ecopilotEnabled": true,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 19.0,
           "economyValue": 15.5,
@@ -10721,7 +11739,16 @@
       {
         "roomNumber": 1,
         "name": "Salon",
+        "accessories": [
+          {
+            "header": "<DEVICE_2>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-02-01T10:17:45.000Z"
+          }
+        ],
         "ecopilotEnabled": true,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 19.5,
           "economyValue": 15.5,
@@ -10816,7 +11843,16 @@
       {
         "roomNumber": 2,
         "name": "Salle de bain du bas",
+        "accessories": [
+          {
+            "header": "<DEVICE_3>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-07-08T07:07:38.000Z"
+          }
+        ],
         "ecopilotEnabled": false,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 20.0,
           "economyValue": 15.5,
@@ -10917,11 +11953,21 @@
   {
     "capture": "23_room1_prog",
     "home_id": "<ID_2>",
+    "vacationReturnDate": "0001-01-01T00:00:00.000Z",
     "rooms": [
       {
         "roomNumber": 0,
         "name": "Cuisine",
+        "accessories": [
+          {
+            "header": "<DEVICE_1>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-01-24T17:33:11.000Z"
+          }
+        ],
         "ecopilotEnabled": true,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 19.0,
           "economyValue": 15.5,
@@ -11016,7 +12062,16 @@
       {
         "roomNumber": 1,
         "name": "Salon",
+        "accessories": [
+          {
+            "header": "<DEVICE_2>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-02-01T10:17:45.000Z"
+          }
+        ],
         "ecopilotEnabled": true,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 19.5,
           "economyValue": 15.5,
@@ -11111,7 +12166,16 @@
       {
         "roomNumber": 2,
         "name": "Salle de bain du bas",
+        "accessories": [
+          {
+            "header": "<DEVICE_3>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-07-08T07:07:38.000Z"
+          }
+        ],
         "ecopilotEnabled": false,
+        "openWindowsDetectionEnabled": true,
         "heaterSettings": {
           "manualValue": 20.0,
           "economyValue": 15.5,
@@ -11206,6 +12270,1621 @@
     ],
     "action": "AdBAOwEBAACJgCEwkYBjhJmAITChgDBIqYBLYLGALTC5gCQwyYAwZsGAZoQBAAAAAAAAAAAAAAAAAAAAAAAAAA==",
     "description": "cockpit room 1 => mode Manual, manuelSP:19.5)",
+    "homeId": "<ID_2>",
+    "tests": "R0D[0-9]M3S[0-9]C(26|38)A[0-9]{1,3}J[0-9]{1,3}W[0-9]{1,3}M[0-9]{1,3}Y[0-9]{1,3} R1D[0-9]M3S[0-9]C(26|39)A[0-9]{1,3}J[0-9]{1,3}W[0-9]{1,3}M[0-9]{1,3}Y[0-9]{1,3} R2D[0-9]M4S[0-9]C(31|40)A[0-9]{1,3}J[0-9]{1,3}W[0-9]{1,3}M[0-9]{1,3}Y[0-9]{1,3}"
+  },
+  {
+    "capture": "24_program_screens",
+    "home_id": "<ID_2>",
+    "vacationReturnDate": "0001-01-01T00:00:00.000Z",
+    "rooms": [
+      {
+        "roomNumber": 0,
+        "name": "Cuisine",
+        "accessories": [
+          {
+            "header": "<DEVICE_1>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-01-24T17:33:11.000Z"
+          }
+        ],
+        "ecopilotEnabled": true,
+        "openWindowsDetectionEnabled": true,
+        "heaterSettings": {
+          "manualValue": 19.0,
+          "economyValue": 15.5,
+          "standardValue": 19.5,
+          "currentMode": 3,
+          "limitationSetPoint": 30.0
+        },
+        "events": [
+          {
+            "reccurency": 0,
+            "eventID": 1,
+            "mode": 1,
+            "startHour": 5,
+            "startMinute": 30,
+            "endHour": 8,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 2,
+            "mode": 1,
+            "startHour": 16,
+            "startMinute": 30,
+            "endHour": 22,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 3,
+            "mode": 1,
+            "startHour": 5,
+            "startMinute": 30,
+            "endHour": 8,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 4,
+            "mode": 1,
+            "startHour": 8,
+            "startMinute": 0,
+            "endHour": 12,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 5,
+            "mode": 1,
+            "startHour": 12,
+            "startMinute": 30,
+            "endHour": 16,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 6,
+            "mode": 1,
+            "startHour": 7,
+            "startMinute": 30,
+            "endHour": 8,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 7,
+            "mode": 1,
+            "startHour": 6,
+            "startMinute": 0,
+            "endHour": 8,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 9,
+            "mode": 1,
+            "startHour": 8,
+            "startMinute": 0,
+            "endHour": 17,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 8,
+            "mode": 1,
+            "startHour": 17,
+            "startMinute": 0,
+            "endHour": 22,
+            "endMinute": 0
+          }
+        ]
+      },
+      {
+        "roomNumber": 1,
+        "name": "Salon",
+        "accessories": [
+          {
+            "header": "<DEVICE_2>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-02-01T10:17:45.000Z"
+          }
+        ],
+        "ecopilotEnabled": true,
+        "openWindowsDetectionEnabled": true,
+        "heaterSettings": {
+          "manualValue": 19.5,
+          "economyValue": 15.5,
+          "standardValue": 19.5,
+          "currentMode": 3,
+          "limitationSetPoint": 30.0
+        },
+        "events": [
+          {
+            "reccurency": 0,
+            "eventID": 1,
+            "mode": 1,
+            "startHour": 5,
+            "startMinute": 30,
+            "endHour": 8,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 2,
+            "mode": 1,
+            "startHour": 16,
+            "startMinute": 30,
+            "endHour": 22,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 3,
+            "mode": 1,
+            "startHour": 5,
+            "startMinute": 30,
+            "endHour": 8,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 4,
+            "mode": 1,
+            "startHour": 8,
+            "startMinute": 0,
+            "endHour": 12,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 5,
+            "mode": 1,
+            "startHour": 12,
+            "startMinute": 30,
+            "endHour": 16,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 6,
+            "mode": 1,
+            "startHour": 7,
+            "startMinute": 30,
+            "endHour": 8,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 7,
+            "mode": 1,
+            "startHour": 6,
+            "startMinute": 0,
+            "endHour": 8,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 9,
+            "mode": 1,
+            "startHour": 8,
+            "startMinute": 0,
+            "endHour": 17,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 8,
+            "mode": 1,
+            "startHour": 17,
+            "startMinute": 0,
+            "endHour": 22,
+            "endMinute": 0
+          }
+        ]
+      },
+      {
+        "roomNumber": 2,
+        "name": "Salle de bain du bas",
+        "accessories": [
+          {
+            "header": "<DEVICE_3>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-07-08T07:07:38.000Z"
+          }
+        ],
+        "ecopilotEnabled": false,
+        "openWindowsDetectionEnabled": true,
+        "heaterSettings": {
+          "manualValue": 20.0,
+          "economyValue": 15.5,
+          "standardValue": 20.0,
+          "currentMode": 4,
+          "limitationSetPoint": 30.0
+        },
+        "events": [
+          {
+            "reccurency": 127,
+            "eventID": 1,
+            "mode": 1,
+            "startHour": 6,
+            "startMinute": 30,
+            "endHour": 8,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 2,
+            "mode": 1,
+            "startHour": 16,
+            "startMinute": 30,
+            "endHour": 22,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 3,
+            "mode": 1,
+            "startHour": 5,
+            "startMinute": 30,
+            "endHour": 8,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 4,
+            "mode": 1,
+            "startHour": 8,
+            "startMinute": 0,
+            "endHour": 12,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 5,
+            "mode": 1,
+            "startHour": 12,
+            "startMinute": 30,
+            "endHour": 16,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 6,
+            "mode": 1,
+            "startHour": 7,
+            "startMinute": 30,
+            "endHour": 8,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 127,
+            "eventID": 7,
+            "mode": 1,
+            "startHour": 6,
+            "startMinute": 0,
+            "endHour": 8,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 9,
+            "mode": 1,
+            "startHour": 8,
+            "startMinute": 0,
+            "endHour": 17,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 8,
+            "mode": 1,
+            "startHour": 17,
+            "startMinute": 0,
+            "endHour": 22,
+            "endMinute": 0
+          }
+        ]
+      }
+    ],
+    "action": "ARDhQwECAACJ/ycwkYBjhJmAITChgDBIqYBLYLGALTC5/yQwyYAwZsGAZoQCAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+    "description": "cockpit room 2 => mode Prog, manuelSP:20)",
+    "homeId": "<ID_2>",
+    "tests": "R0D[0-9]M3S[0-9]C(26|38)A[0-9]{1,3}J[0-9]{1,3}W[0-9]{1,3}M[0-9]{1,3}Y[0-9]{1,3} R1D[0-9]M3S[0-9]C(26|39)A[0-9]{1,3}J[0-9]{1,3}W[0-9]{1,3}M[0-9]{1,3}Y[0-9]{1,3} R2D[0-9]M4S[0-9]C(31|40)A[0-9]{1,3}J[0-9]{1,3}W[0-9]{1,3}M[0-9]{1,3}Y[0-9]{1,3}"
+  },
+  {
+    "capture": "24_program_screens",
+    "home_id": "<ID_2>",
+    "vacationReturnDate": "0001-01-01T00:00:00.000Z",
+    "rooms": [
+      {
+        "roomNumber": 0,
+        "name": "Cuisine",
+        "accessories": [
+          {
+            "header": "<DEVICE_1>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-01-24T17:33:11.000Z"
+          }
+        ],
+        "ecopilotEnabled": true,
+        "openWindowsDetectionEnabled": true,
+        "heaterSettings": {
+          "manualValue": 19.0,
+          "economyValue": 15.5,
+          "standardValue": 19.5,
+          "currentMode": 3,
+          "limitationSetPoint": 30.0
+        },
+        "events": [
+          {
+            "reccurency": 0,
+            "eventID": 1,
+            "mode": 1,
+            "startHour": 5,
+            "startMinute": 30,
+            "endHour": 8,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 2,
+            "mode": 1,
+            "startHour": 16,
+            "startMinute": 30,
+            "endHour": 22,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 3,
+            "mode": 1,
+            "startHour": 5,
+            "startMinute": 30,
+            "endHour": 8,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 4,
+            "mode": 1,
+            "startHour": 8,
+            "startMinute": 0,
+            "endHour": 12,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 5,
+            "mode": 1,
+            "startHour": 12,
+            "startMinute": 30,
+            "endHour": 16,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 6,
+            "mode": 1,
+            "startHour": 7,
+            "startMinute": 30,
+            "endHour": 8,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 7,
+            "mode": 1,
+            "startHour": 6,
+            "startMinute": 0,
+            "endHour": 8,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 9,
+            "mode": 1,
+            "startHour": 8,
+            "startMinute": 0,
+            "endHour": 17,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 8,
+            "mode": 1,
+            "startHour": 17,
+            "startMinute": 0,
+            "endHour": 22,
+            "endMinute": 0
+          }
+        ]
+      },
+      {
+        "roomNumber": 1,
+        "name": "Salon",
+        "accessories": [
+          {
+            "header": "<DEVICE_2>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-02-01T10:17:45.000Z"
+          }
+        ],
+        "ecopilotEnabled": true,
+        "openWindowsDetectionEnabled": true,
+        "heaterSettings": {
+          "manualValue": 19.5,
+          "economyValue": 15.5,
+          "standardValue": 19.5,
+          "currentMode": 3,
+          "limitationSetPoint": 30.0
+        },
+        "events": [
+          {
+            "reccurency": 0,
+            "eventID": 1,
+            "mode": 1,
+            "startHour": 5,
+            "startMinute": 30,
+            "endHour": 8,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 2,
+            "mode": 1,
+            "startHour": 16,
+            "startMinute": 30,
+            "endHour": 22,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 3,
+            "mode": 1,
+            "startHour": 5,
+            "startMinute": 30,
+            "endHour": 8,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 4,
+            "mode": 1,
+            "startHour": 8,
+            "startMinute": 0,
+            "endHour": 12,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 5,
+            "mode": 1,
+            "startHour": 12,
+            "startMinute": 30,
+            "endHour": 16,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 6,
+            "mode": 1,
+            "startHour": 7,
+            "startMinute": 30,
+            "endHour": 8,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 7,
+            "mode": 1,
+            "startHour": 6,
+            "startMinute": 0,
+            "endHour": 8,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 9,
+            "mode": 1,
+            "startHour": 8,
+            "startMinute": 0,
+            "endHour": 17,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 8,
+            "mode": 1,
+            "startHour": 17,
+            "startMinute": 0,
+            "endHour": 22,
+            "endMinute": 0
+          }
+        ]
+      },
+      {
+        "roomNumber": 2,
+        "name": "Salle de bain du bas",
+        "accessories": [
+          {
+            "header": "<DEVICE_3>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-07-08T07:07:38.000Z"
+          }
+        ],
+        "ecopilotEnabled": false,
+        "openWindowsDetectionEnabled": true,
+        "heaterSettings": {
+          "manualValue": 20.0,
+          "economyValue": 15.5,
+          "standardValue": 20.0,
+          "currentMode": 4,
+          "limitationSetPoint": 30.0
+        },
+        "events": [
+          {
+            "reccurency": 127,
+            "eventID": 1,
+            "mode": 1,
+            "startHour": 6,
+            "startMinute": 30,
+            "endHour": 8,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 2,
+            "mode": 1,
+            "startHour": 16,
+            "startMinute": 30,
+            "endHour": 22,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 3,
+            "mode": 1,
+            "startHour": 5,
+            "startMinute": 30,
+            "endHour": 8,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 4,
+            "mode": 1,
+            "startHour": 8,
+            "startMinute": 0,
+            "endHour": 12,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 5,
+            "mode": 1,
+            "startHour": 12,
+            "startMinute": 30,
+            "endHour": 16,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 6,
+            "mode": 1,
+            "startHour": 7,
+            "startMinute": 30,
+            "endHour": 8,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 127,
+            "eventID": 7,
+            "mode": 1,
+            "startHour": 6,
+            "startMinute": 0,
+            "endHour": 8,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 9,
+            "mode": 1,
+            "startHour": 8,
+            "startMinute": 0,
+            "endHour": 17,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 8,
+            "mode": 1,
+            "startHour": 17,
+            "startMinute": 0,
+            "endHour": 22,
+            "endMinute": 0
+          }
+        ]
+      }
+    ],
+    "action": "ARDhQwECAACJ/ycwkYBjhJmAITChgDBIqYBLYLGALTC5/yQwyYAwZsGAZoQCAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+    "description": "cockpit room 2 => mode Prog, manuelSP:20)",
+    "homeId": "<ID_2>",
+    "tests": "R0D[0-9]M3S[0-9]C(26|38)A[0-9]{1,3}J[0-9]{1,3}W[0-9]{1,3}M[0-9]{1,3}Y[0-9]{1,3} R1D[0-9]M3S[0-9]C(26|39)A[0-9]{1,3}J[0-9]{1,3}W[0-9]{1,3}M[0-9]{1,3}Y[0-9]{1,3} R2D[0-9]M4S[0-9]C(31|40)A[0-9]{1,3}J[0-9]{1,3}W[0-9]{1,3}M[0-9]{1,3}Y[0-9]{1,3}"
+  },
+  {
+    "capture": "24_program_screens",
+    "home_id": "<ID_2>",
+    "vacationReturnDate": "0001-01-01T00:00:00.000Z",
+    "rooms": [
+      {
+        "roomNumber": 0,
+        "name": "Cuisine",
+        "accessories": [
+          {
+            "header": "<DEVICE_1>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-01-24T17:33:11.000Z"
+          }
+        ],
+        "ecopilotEnabled": true,
+        "openWindowsDetectionEnabled": true,
+        "heaterSettings": {
+          "manualValue": 19.0,
+          "economyValue": 15.5,
+          "standardValue": 19.5,
+          "currentMode": 3,
+          "limitationSetPoint": 30.0
+        },
+        "events": [
+          {
+            "reccurency": 0,
+            "eventID": 1,
+            "mode": 1,
+            "startHour": 5,
+            "startMinute": 30,
+            "endHour": 8,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 2,
+            "mode": 1,
+            "startHour": 16,
+            "startMinute": 30,
+            "endHour": 22,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 3,
+            "mode": 1,
+            "startHour": 5,
+            "startMinute": 30,
+            "endHour": 8,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 4,
+            "mode": 1,
+            "startHour": 8,
+            "startMinute": 0,
+            "endHour": 12,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 5,
+            "mode": 1,
+            "startHour": 12,
+            "startMinute": 30,
+            "endHour": 16,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 6,
+            "mode": 1,
+            "startHour": 7,
+            "startMinute": 30,
+            "endHour": 8,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 7,
+            "mode": 1,
+            "startHour": 6,
+            "startMinute": 0,
+            "endHour": 8,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 9,
+            "mode": 1,
+            "startHour": 8,
+            "startMinute": 0,
+            "endHour": 17,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 8,
+            "mode": 1,
+            "startHour": 17,
+            "startMinute": 0,
+            "endHour": 22,
+            "endMinute": 0
+          }
+        ]
+      },
+      {
+        "roomNumber": 1,
+        "name": "Salon",
+        "accessories": [
+          {
+            "header": "<DEVICE_2>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-02-01T10:17:45.000Z"
+          }
+        ],
+        "ecopilotEnabled": true,
+        "openWindowsDetectionEnabled": true,
+        "heaterSettings": {
+          "manualValue": 19.5,
+          "economyValue": 15.5,
+          "standardValue": 19.5,
+          "currentMode": 3,
+          "limitationSetPoint": 30.0
+        },
+        "events": [
+          {
+            "reccurency": 0,
+            "eventID": 1,
+            "mode": 1,
+            "startHour": 5,
+            "startMinute": 30,
+            "endHour": 8,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 2,
+            "mode": 1,
+            "startHour": 16,
+            "startMinute": 30,
+            "endHour": 22,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 3,
+            "mode": 1,
+            "startHour": 5,
+            "startMinute": 30,
+            "endHour": 8,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 4,
+            "mode": 1,
+            "startHour": 8,
+            "startMinute": 0,
+            "endHour": 12,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 5,
+            "mode": 1,
+            "startHour": 12,
+            "startMinute": 30,
+            "endHour": 16,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 6,
+            "mode": 1,
+            "startHour": 7,
+            "startMinute": 30,
+            "endHour": 8,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 7,
+            "mode": 1,
+            "startHour": 6,
+            "startMinute": 0,
+            "endHour": 8,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 9,
+            "mode": 1,
+            "startHour": 8,
+            "startMinute": 0,
+            "endHour": 17,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 8,
+            "mode": 1,
+            "startHour": 17,
+            "startMinute": 0,
+            "endHour": 22,
+            "endMinute": 0
+          }
+        ]
+      },
+      {
+        "roomNumber": 2,
+        "name": "Salle de bain du bas",
+        "accessories": [
+          {
+            "header": "<DEVICE_3>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-07-08T07:07:38.000Z"
+          }
+        ],
+        "ecopilotEnabled": false,
+        "openWindowsDetectionEnabled": true,
+        "heaterSettings": {
+          "manualValue": 20.0,
+          "economyValue": 15.5,
+          "standardValue": 20.0,
+          "currentMode": 4,
+          "limitationSetPoint": 30.0
+        },
+        "events": [
+          {
+            "reccurency": 127,
+            "eventID": 1,
+            "mode": 1,
+            "startHour": 6,
+            "startMinute": 30,
+            "endHour": 8,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 2,
+            "mode": 1,
+            "startHour": 16,
+            "startMinute": 30,
+            "endHour": 22,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 3,
+            "mode": 1,
+            "startHour": 5,
+            "startMinute": 30,
+            "endHour": 8,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 4,
+            "mode": 1,
+            "startHour": 8,
+            "startMinute": 0,
+            "endHour": 12,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 5,
+            "mode": 1,
+            "startHour": 12,
+            "startMinute": 30,
+            "endHour": 16,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 6,
+            "mode": 1,
+            "startHour": 7,
+            "startMinute": 30,
+            "endHour": 8,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 127,
+            "eventID": 7,
+            "mode": 1,
+            "startHour": 6,
+            "startMinute": 0,
+            "endHour": 8,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 9,
+            "mode": 1,
+            "startHour": 8,
+            "startMinute": 0,
+            "endHour": 17,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 8,
+            "mode": 1,
+            "startHour": 17,
+            "startMinute": 0,
+            "endHour": 22,
+            "endMinute": 0
+          }
+        ]
+      }
+    ],
+    "action": "ARDhQwECAACJ/ycwkYBjhJmAITChgDBIqYBLYLGALTC5/yQwyYAwZsGAZoQCAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+    "description": "cockpit room 2 => mode Prog, manuelSP:20)",
+    "homeId": "<ID_2>",
+    "tests": "R0D[0-9]M3S[0-9]C(26|38)A[0-9]{1,3}J[0-9]{1,3}W[0-9]{1,3}M[0-9]{1,3}Y[0-9]{1,3} R1D[0-9]M3S[0-9]C(26|39)A[0-9]{1,3}J[0-9]{1,3}W[0-9]{1,3}M[0-9]{1,3}Y[0-9]{1,3} R2D[0-9]M4S[0-9]C(31|40)A[0-9]{1,3}J[0-9]{1,3}W[0-9]{1,3}M[0-9]{1,3}Y[0-9]{1,3}"
+  },
+  {
+    "capture": "24_program_screens",
+    "home_id": "<ID_2>",
+    "vacationReturnDate": "0001-01-01T00:00:00.000Z",
+    "rooms": [
+      {
+        "roomNumber": 0,
+        "name": "Cuisine",
+        "accessories": [
+          {
+            "header": "<DEVICE_1>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-01-24T17:33:11.000Z"
+          }
+        ],
+        "ecopilotEnabled": true,
+        "openWindowsDetectionEnabled": true,
+        "heaterSettings": {
+          "manualValue": 19.0,
+          "economyValue": 15.5,
+          "standardValue": 19.5,
+          "currentMode": 3,
+          "limitationSetPoint": 30.0
+        },
+        "events": [
+          {
+            "reccurency": 0,
+            "eventID": 1,
+            "mode": 1,
+            "startHour": 5,
+            "startMinute": 30,
+            "endHour": 8,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 2,
+            "mode": 1,
+            "startHour": 16,
+            "startMinute": 30,
+            "endHour": 22,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 3,
+            "mode": 1,
+            "startHour": 5,
+            "startMinute": 30,
+            "endHour": 8,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 4,
+            "mode": 1,
+            "startHour": 8,
+            "startMinute": 0,
+            "endHour": 12,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 5,
+            "mode": 1,
+            "startHour": 12,
+            "startMinute": 30,
+            "endHour": 16,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 6,
+            "mode": 1,
+            "startHour": 7,
+            "startMinute": 30,
+            "endHour": 8,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 7,
+            "mode": 1,
+            "startHour": 6,
+            "startMinute": 0,
+            "endHour": 8,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 9,
+            "mode": 1,
+            "startHour": 8,
+            "startMinute": 0,
+            "endHour": 17,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 8,
+            "mode": 1,
+            "startHour": 17,
+            "startMinute": 0,
+            "endHour": 22,
+            "endMinute": 0
+          }
+        ]
+      },
+      {
+        "roomNumber": 1,
+        "name": "Salon",
+        "accessories": [
+          {
+            "header": "<DEVICE_2>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-02-01T10:17:45.000Z"
+          }
+        ],
+        "ecopilotEnabled": true,
+        "openWindowsDetectionEnabled": true,
+        "heaterSettings": {
+          "manualValue": 19.5,
+          "economyValue": 15.5,
+          "standardValue": 19.5,
+          "currentMode": 3,
+          "limitationSetPoint": 30.0
+        },
+        "events": [
+          {
+            "reccurency": 0,
+            "eventID": 1,
+            "mode": 1,
+            "startHour": 5,
+            "startMinute": 30,
+            "endHour": 8,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 2,
+            "mode": 1,
+            "startHour": 16,
+            "startMinute": 30,
+            "endHour": 22,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 3,
+            "mode": 1,
+            "startHour": 5,
+            "startMinute": 30,
+            "endHour": 8,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 4,
+            "mode": 1,
+            "startHour": 8,
+            "startMinute": 0,
+            "endHour": 12,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 5,
+            "mode": 1,
+            "startHour": 12,
+            "startMinute": 30,
+            "endHour": 16,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 6,
+            "mode": 1,
+            "startHour": 7,
+            "startMinute": 30,
+            "endHour": 8,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 7,
+            "mode": 1,
+            "startHour": 6,
+            "startMinute": 0,
+            "endHour": 8,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 9,
+            "mode": 1,
+            "startHour": 8,
+            "startMinute": 0,
+            "endHour": 17,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 8,
+            "mode": 1,
+            "startHour": 17,
+            "startMinute": 0,
+            "endHour": 22,
+            "endMinute": 0
+          }
+        ]
+      },
+      {
+        "roomNumber": 2,
+        "name": "Salle de bain du bas",
+        "accessories": [
+          {
+            "header": "<DEVICE_3>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-07-08T07:07:38.000Z"
+          }
+        ],
+        "ecopilotEnabled": false,
+        "openWindowsDetectionEnabled": true,
+        "heaterSettings": {
+          "manualValue": 20.0,
+          "economyValue": 15.5,
+          "standardValue": 20.0,
+          "currentMode": 4,
+          "limitationSetPoint": 30.0
+        },
+        "events": [
+          {
+            "reccurency": 127,
+            "eventID": 1,
+            "mode": 1,
+            "startHour": 6,
+            "startMinute": 30,
+            "endHour": 8,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 2,
+            "mode": 1,
+            "startHour": 16,
+            "startMinute": 30,
+            "endHour": 22,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 3,
+            "mode": 1,
+            "startHour": 5,
+            "startMinute": 30,
+            "endHour": 8,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 4,
+            "mode": 1,
+            "startHour": 8,
+            "startMinute": 0,
+            "endHour": 12,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 5,
+            "mode": 1,
+            "startHour": 12,
+            "startMinute": 30,
+            "endHour": 16,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 6,
+            "mode": 1,
+            "startHour": 7,
+            "startMinute": 30,
+            "endHour": 8,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 127,
+            "eventID": 7,
+            "mode": 1,
+            "startHour": 6,
+            "startMinute": 0,
+            "endHour": 8,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 9,
+            "mode": 1,
+            "startHour": 8,
+            "startMinute": 0,
+            "endHour": 17,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 8,
+            "mode": 1,
+            "startHour": 17,
+            "startMinute": 0,
+            "endHour": 22,
+            "endMinute": 0
+          }
+        ]
+      }
+    ],
+    "action": "AdBAMwEAAACJgCEwkYBjhJmAITChgDBIqYBLYLGALTC5gCQwyYAwZsGAZoQAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+    "description": "cockpit room 0 => mode Manual, manuelSP:19)",
+    "homeId": "<ID_2>",
+    "tests": "R0D[0-9]M3S[0-9]C(26|38)A[0-9]{1,3}J[0-9]{1,3}W[0-9]{1,3}M[0-9]{1,3}Y[0-9]{1,3} R1D[0-9]M3S[0-9]C(26|39)A[0-9]{1,3}J[0-9]{1,3}W[0-9]{1,3}M[0-9]{1,3}Y[0-9]{1,3} R2D[0-9]M4S[0-9]C(31|40)A[0-9]{1,3}J[0-9]{1,3}W[0-9]{1,3}M[0-9]{1,3}Y[0-9]{1,3}"
+  },
+  {
+    "capture": "24_program_screens",
+    "home_id": "<ID_2>",
+    "vacationReturnDate": "0001-01-01T00:00:00.000Z",
+    "rooms": [
+      {
+        "roomNumber": 0,
+        "name": "Cuisine",
+        "accessories": [
+          {
+            "header": "<DEVICE_1>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-01-24T17:33:11.000Z"
+          }
+        ],
+        "ecopilotEnabled": true,
+        "openWindowsDetectionEnabled": true,
+        "heaterSettings": {
+          "manualValue": 19.0,
+          "economyValue": 15.5,
+          "standardValue": 19.5,
+          "currentMode": 3,
+          "limitationSetPoint": 30.0
+        },
+        "events": [
+          {
+            "reccurency": 0,
+            "eventID": 1,
+            "mode": 1,
+            "startHour": 5,
+            "startMinute": 30,
+            "endHour": 8,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 2,
+            "mode": 1,
+            "startHour": 16,
+            "startMinute": 30,
+            "endHour": 22,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 3,
+            "mode": 1,
+            "startHour": 5,
+            "startMinute": 30,
+            "endHour": 8,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 4,
+            "mode": 1,
+            "startHour": 8,
+            "startMinute": 0,
+            "endHour": 12,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 5,
+            "mode": 1,
+            "startHour": 12,
+            "startMinute": 30,
+            "endHour": 16,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 6,
+            "mode": 1,
+            "startHour": 7,
+            "startMinute": 30,
+            "endHour": 8,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 7,
+            "mode": 1,
+            "startHour": 6,
+            "startMinute": 0,
+            "endHour": 8,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 9,
+            "mode": 1,
+            "startHour": 8,
+            "startMinute": 0,
+            "endHour": 17,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 8,
+            "mode": 1,
+            "startHour": 17,
+            "startMinute": 0,
+            "endHour": 22,
+            "endMinute": 0
+          }
+        ]
+      },
+      {
+        "roomNumber": 1,
+        "name": "Salon",
+        "accessories": [
+          {
+            "header": "<DEVICE_2>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-02-01T10:17:45.000Z"
+          }
+        ],
+        "ecopilotEnabled": true,
+        "openWindowsDetectionEnabled": true,
+        "heaterSettings": {
+          "manualValue": 19.5,
+          "economyValue": 15.5,
+          "standardValue": 19.5,
+          "currentMode": 3,
+          "limitationSetPoint": 30.0
+        },
+        "events": [
+          {
+            "reccurency": 0,
+            "eventID": 1,
+            "mode": 1,
+            "startHour": 5,
+            "startMinute": 30,
+            "endHour": 8,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 2,
+            "mode": 1,
+            "startHour": 16,
+            "startMinute": 30,
+            "endHour": 22,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 3,
+            "mode": 1,
+            "startHour": 5,
+            "startMinute": 30,
+            "endHour": 8,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 4,
+            "mode": 1,
+            "startHour": 8,
+            "startMinute": 0,
+            "endHour": 12,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 5,
+            "mode": 1,
+            "startHour": 12,
+            "startMinute": 30,
+            "endHour": 16,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 6,
+            "mode": 1,
+            "startHour": 7,
+            "startMinute": 30,
+            "endHour": 8,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 7,
+            "mode": 1,
+            "startHour": 6,
+            "startMinute": 0,
+            "endHour": 8,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 9,
+            "mode": 1,
+            "startHour": 8,
+            "startMinute": 0,
+            "endHour": 17,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 8,
+            "mode": 1,
+            "startHour": 17,
+            "startMinute": 0,
+            "endHour": 22,
+            "endMinute": 0
+          }
+        ]
+      },
+      {
+        "roomNumber": 2,
+        "name": "Salle de bain du bas",
+        "accessories": [
+          {
+            "header": "<DEVICE_3>",
+            "category": 5,
+            "softwareVersion": "39",
+            "creationDate": "2025-07-08T07:07:38.000Z"
+          }
+        ],
+        "ecopilotEnabled": false,
+        "openWindowsDetectionEnabled": true,
+        "heaterSettings": {
+          "manualValue": 20.0,
+          "economyValue": 15.5,
+          "standardValue": 20.0,
+          "currentMode": 4,
+          "limitationSetPoint": 30.0
+        },
+        "events": [
+          {
+            "reccurency": 127,
+            "eventID": 1,
+            "mode": 1,
+            "startHour": 6,
+            "startMinute": 30,
+            "endHour": 8,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 2,
+            "mode": 1,
+            "startHour": 16,
+            "startMinute": 30,
+            "endHour": 22,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 3,
+            "mode": 1,
+            "startHour": 5,
+            "startMinute": 30,
+            "endHour": 8,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 4,
+            "mode": 1,
+            "startHour": 8,
+            "startMinute": 0,
+            "endHour": 12,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 5,
+            "mode": 1,
+            "startHour": 12,
+            "startMinute": 30,
+            "endHour": 16,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 6,
+            "mode": 1,
+            "startHour": 7,
+            "startMinute": 30,
+            "endHour": 8,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 127,
+            "eventID": 7,
+            "mode": 1,
+            "startHour": 6,
+            "startMinute": 0,
+            "endHour": 8,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 9,
+            "mode": 1,
+            "startHour": 8,
+            "startMinute": 0,
+            "endHour": 17,
+            "endMinute": 0
+          },
+          {
+            "reccurency": 0,
+            "eventID": 8,
+            "mode": 1,
+            "startHour": 17,
+            "startMinute": 0,
+            "endHour": 22,
+            "endMinute": 0
+          }
+        ]
+      }
+    ],
+    "action": "AdBAMwEAAACJgCEwkYBjhJmAITChgDBIqYBLYLGALTC5gCQwyYAwZsGAZoQAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+    "description": "cockpit room 0 => mode Manual, manuelSP:19)",
     "homeId": "<ID_2>",
     "tests": "R0D[0-9]M3S[0-9]C(26|38)A[0-9]{1,3}J[0-9]{1,3}W[0-9]{1,3}M[0-9]{1,3}Y[0-9]{1,3} R1D[0-9]M3S[0-9]C(26|39)A[0-9]{1,3}J[0-9]{1,3}W[0-9]{1,3}M[0-9]{1,3}Y[0-9]{1,3} R2D[0-9]M4S[0-9]C(31|40)A[0-9]{1,3}J[0-9]{1,3}W[0-9]{1,3}M[0-9]{1,3}Y[0-9]{1,3}"
   }

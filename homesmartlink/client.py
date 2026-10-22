@@ -4,6 +4,8 @@ from __future__ import annotations
 
 import asyncio
 import logging
+from collections.abc import Callable
+from datetime import date
 from typing import Any
 
 import aiohttp
@@ -16,7 +18,7 @@ from .exceptions import (
     HomeSmartLinkError,
     RateLimitError,
 )
-from .frame import build_tests, describe, encode_action_b64, validate_set_point
+from .frame import b64, build_tests, describe, encode_home, encode_room, validate_set_point
 from .models import (
     DeviceStatus,
     Diagnosis,
@@ -129,14 +131,12 @@ class HomeSmartLinkClient:
         room_number: int,
         mode: HeaterMode,
         manual_value: float | None = None,
+        *,
+        today: date | None = None,
     ) -> Home:
-        """Change the mode (and optionally the manual set point) of one room.
+        """Change the mode (and optionally the manual set point) of one room."""
 
-        Mirrors the app: re-read the home, send the command frame to the box,
-        then save the whole home document. Returns the home as written.
-        """
-        async with self._write_lock:
-            home = await self.get_home(home_id)
+        def edit(home: Home) -> Home:
             current = home.room(room_number).heater_settings
             new_manual = current.manual_value if manual_value is None else manual_value
             if manual_value is not None:
@@ -148,23 +148,75 @@ class HomeSmartLinkClient:
                 standard_value=current.standard_value,
                 limitation_set_point=current.limitation_set_point,
             )
-            updated = home.with_room_settings(room_number, settings)
-            room = updated.room(room_number)
+            return home.with_room_settings(room_number, settings)
 
-            notify = {
-                "action": encode_action_b64(room),
-                "description": describe(room),
-                "homeId": home_id,
-                "tests": build_tests(updated.rooms),
-            }
-            _check_ok(
-                await self._request("POST", "api/1/device/notify", json_body=notify), "notify"
+        return await self.update_room(home_id, room_number, edit, today=today)
+
+    async def update_room(
+        self,
+        home_id: str,
+        room_number: int,
+        edit: Callable[[Home], Home],
+        *,
+        today: date | None = None,
+    ) -> Home:
+        """Apply a room-settings edit like the app's room screens.
+
+        Re-reads the home, sends the room frame (`action`) to the box, then saves
+        the whole home document. `edit` may raise UnsupportedCommandError, in
+        which case nothing is sent. Returns the home as written.
+        """
+        async with self._write_lock:
+            updated = edit(await self.get_home(home_id))
+            day = today or date.today()
+            room = updated.room(room_number)
+            await self._notify(
+                {
+                    "action": b64(
+                        encode_room(room, vacation_return=updated.vacation_return_date, today=day)
+                    ),
+                    "description": describe(room),
+                    "homeId": home_id,
+                    "tests": build_tests(updated, today=day),
+                }
             )
-            _check_ok(
-                await self._request("PUT", "api/1/homes/", json_body=updated.to_update_payload()),
-                "home update",
-            )
+            await self._save(updated)
             return updated
+
+    async def update_program(
+        self,
+        home_id: str,
+        edit: Callable[[Home], Home],
+        *,
+        today: date | None = None,
+    ) -> Home:
+        """Apply a weekly-program edit like the app's program screens.
+
+        Same as update_room, but the box receives the whole-home frame
+        (`payload`), as the app does after editing program slots.
+        """
+        async with self._write_lock:
+            updated = edit(await self.get_home(home_id))
+            day = today or date.today()
+            await self._notify(
+                {
+                    "payload": b64(encode_home(updated, today=day)),
+                    "description": None,
+                    "homeId": home_id,
+                    "tests": build_tests(updated, today=day),
+                }
+            )
+            await self._save(updated)
+            return updated
+
+    async def _notify(self, body: dict[str, Any]) -> None:
+        _check_ok(await self._request("POST", "api/1/device/notify", json_body=body), "notify")
+
+    async def _save(self, home: Home) -> None:
+        _check_ok(
+            await self._request("PUT", "api/1/homes/", json_body=home.to_update_payload()),
+            "home update",
+        )
 
     # -- transport ---------------------------------------------------------------
 

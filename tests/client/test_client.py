@@ -203,3 +203,42 @@ async def test_repr_hides_secrets(client: HomeSmartLinkClient, fake: FakeCloud) 
     await client.login()
     text = repr(client)
     assert EMAIL not in text and PASSWORD not in text and TOKEN not in text
+
+
+async def test_update_program_sends_the_whole_home_frame(
+    client: HomeSmartLinkClient, fake: FakeCloud, home_id: str, home_payload: Any
+) -> None:
+    from datetime import date, time
+
+    from homesmartlink.frame import encode_home
+    from homesmartlink.program import with_advanced_slot
+
+    _add_write_routes(fake, home_id, home_payload)
+    updated = await client.update_program(
+        home_id,
+        lambda home: with_advanced_slot(home, 2, 2, time(17), time(21), [0]),
+        today=date(2026, 10, 22),
+    )
+    notify = fake.calls("POST", "api/1/device/notify")[0].json
+    assert set(notify) == {"payload", "description", "homeId", "tests"}
+    assert notify["description"] is None
+    payload = base64.b64decode(notify["payload"])
+    assert len(payload) == 512
+    assert payload == encode_home(updated, today=date(2026, 10, 22))
+    put = fake.calls("PUT", "api/1/homes/")[0].json
+    slot = next(e for e in put["rooms"][2]["events"] if e["eventID"] == 2)
+    assert (slot["startHour"], slot["endHour"], slot["reccurency"]) == (17, 21, 1)
+
+
+async def test_rejected_edit_sends_nothing(
+    client: HomeSmartLinkClient, fake: FakeCloud, home_id: str, home_payload: Any
+) -> None:
+    from homesmartlink.program import with_program_temperatures
+
+    _add_write_routes(fake, home_id, home_payload)
+    with pytest.raises(UnsupportedCommandError):
+        await client.update_room(
+            home_id, 2, lambda home: with_program_temperatures(home, 2, economy=19.5)
+        )
+    assert not fake.calls("POST", "api/1/device/notify")
+    assert not fake.calls("PUT", "api/1/homes/")
