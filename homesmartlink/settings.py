@@ -47,7 +47,8 @@ def with_vacation(home: Home, return_date: date | None, today: date) -> Home:
 def vacation_description(return_date: date | None) -> str:
     """`description` the app sends when toggling vacation mode."""
     shown = return_date or date(1, 1, 1)
-    return f"mode vacance {shown:%m/%d/%Y} 00:00:00"
+    # No strftime: "%Y" does not zero-pad year 1 on Linux (glibc).
+    return f"mode vacance {shown.month:02d}/{shown.day:02d}/{shown.year:04d} 00:00:00"
 
 
 def with_home_mode(home: Home, mode: HeaterMode) -> Home:
