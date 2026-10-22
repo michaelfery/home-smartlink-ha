@@ -54,38 +54,50 @@ The heater uses the room's **comfort temperature while a program slot is active*
 **eco temperature otherwise**. In `auto`, the climate entity shows that effective target. Its
 attributes give `program_state` (`comfort`/`eco`), `active_slot` and the whole `program`.
 
-Two kinds of program exist, chosen with the *Programming preference* select:
+Two kinds of program exist:
 
-- **Advanced**: six slots, each with its hours and weekdays (the app's calendar screen).
-  Edit them with the `home_smartlink.set_program_slot` action:
-
-  ```yaml
-  action: home_smartlink.set_program_slot
-  target:
-    entity_id: climate.bathroom_thermostat
-  data:
-    slot: 2
-    start: "17:00"
-    end: "21:30"
-    days: [monday, tuesday, wednesday, thursday, friday]  # [] disables the slot
-  ```
-
+- **Advanced**: six slots, each with its hours and weekdays (the app's calendar screen);
 - **Simplified**: Morning, Day and Evening ranges, each active on chosen weekdays. Day always
-  spans from the end of Morning to the start of Evening. Edit them with
-  `home_smartlink.set_simplified_program`; omitted fields keep their value:
+  spans from the end of Morning to the start of Evening.
 
-  ```yaml
-  action: home_smartlink.set_simplified_program
-  target:
-    entity_id: climate.kitchen_thermostat
-  data:
-    morning_start: "06:00"
-    morning_end: "08:00"
-    evening_start: "17:00"
-    evening_end: "22:00"
-    morning_days: [monday, tuesday, wednesday, thursday, friday]
-    evening_days: [monday, tuesday, wednesday, thursday, friday, saturday, sunday]
-  ```
+#### Editing the program in the UI
+
+**Settings → Devices & services → Home-SmartLink → Configure → Weekly program**:
+
+1. choose the room;
+2. set its programming preference (Advanced/Simplified) and the eco and comfort temperatures
+   of Program mode;
+3. edit the slots of that program. The form is pre-filled with the current hours and days;
+   a slot with no day is disabled.
+
+The preference and the temperatures are also available as entities on each thermostat
+(*Configuration* section): `select.<room>_thermostat_programming_preference` and the two
+`number` entities.
+
+#### Editing the program in automations and scripts
+
+Two actions do the same: `home_smartlink.set_program_slot` (Advanced) and
+`home_smartlink.set_simplified_program` (Simplified, omitted fields keep their value):
+
+```yaml
+action: home_smartlink.set_program_slot
+target:
+  entity_id: climate.bathroom_thermostat
+data:
+  slot: 2
+  start: "17:00"
+  end: "21:30"
+  days: [monday, tuesday, wednesday, thursday, friday]  # [] disables the slot
+```
+
+```yaml
+action: home_smartlink.set_simplified_program
+target:
+  entity_id: climate.kitchen_thermostat
+data:
+  morning_days: [monday, tuesday, wednesday, thursday, friday]
+  evening_end: "22:30"
+```
 
 Times must be multiples of 10 minutes (the thermostats store 10-minute steps). The app's
 rules apply: a slot ends after it starts; Morning ends before Evening starts; eco is at least
@@ -115,7 +127,8 @@ Assistant configuration, then restart Home Assistant.
 app's e-mail and password. If the account has access to several homes, choose one; add the
 integration again for each other home.
 
-Options (**Configure** on the integration):
+**Configure** opens a menu: *Weekly program* (see [Program mode](#program-mode-auto)) or
+*Polling and diagnosis*:
 
 | Option | Default | Range | Effect |
 |---|---|---|---|
