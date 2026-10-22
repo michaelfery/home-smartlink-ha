@@ -116,8 +116,13 @@ It was probed **read-only, twice**, with the app's session token
 
 - It returns the result of the **last diagnosis**: `_created_at` matches the diagnosis
   launched in 22. Three minutes later, without a new diagnosis, it returned the same snapshot.
-  **Fresh values therefore need a `POST diagnosys`.** How long the thermostats take to
-  answer: under about 6 s here (diagnosis requested at 17:33:02, status at 17:33:07).
+  **Fresh values therefore need a `POST diagnosys`.**
+- **Latency**: on 2026-10-22 18:33:37Z a diagnosis requested by the client was readable at
+  18:34:58Z, about 80 s later. The status `_created_at` is (close to) the **request** time,
+  not the completion time; completion showed up as a second change of the diagnosis
+  `_updated_at` (`GET diagnosys/{id}`). A status is fresh when
+  `_created_at` ≥ the request time. Polling `GET diagnosys/{id}` is not required: the status
+  of a diagnosis whose id was never read also arrived.
 - Status string, one per room. Fields are a letter followed by digits:
 
   | Field | Example | Meaning | Confidence |
