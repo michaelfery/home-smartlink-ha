@@ -25,8 +25,11 @@ For each room with a thermostat:
 
 | Entity | Content |
 |---|---|
-| `climate.<room>_thermostat` | Mode, presets, target temperature, measured temperature |
+| `climate.<room>_thermostat` | Mode, presets, target temperature, measured temperature, weekly program (attributes) |
 | `sensor.<room>_thermostat_temperature` | Measured temperature |
+| `number.<room>_thermostat_eco_temperature_program` | Eco temperature of Program mode (13–19 °C) |
+| `number.<room>_thermostat_comfort_temperature_program` | Comfort temperature of Program mode (13–30 °C) |
+| `select.<room>_thermostat_programming_preference` | Program type: `advanced` or `simplified` |
 
 For the box (diagnostic entities): last connection to the cloud, and time of the last
 thermostat status update.
@@ -44,6 +47,49 @@ thermostat status update.
 
 Target temperature: 13.5 to 30 °C, in 0.5 °C steps (the app's range). Setting a temperature
 switches the room to Manual, like the app's dial.
+
+### Program mode (`auto`)
+
+The heater uses the room's **comfort temperature while a program slot is active**, and its
+**eco temperature otherwise**. In `auto`, the climate entity shows that effective target. Its
+attributes give `program_state` (`comfort`/`eco`), `active_slot` and the whole `program`.
+
+Two kinds of program exist, chosen with the *Programming preference* select:
+
+- **Advanced**: six slots, each with its hours and weekdays (the app's calendar screen).
+  Edit them with the `home_smartlink.set_program_slot` action:
+
+  ```yaml
+  action: home_smartlink.set_program_slot
+  target:
+    entity_id: climate.bathroom_thermostat
+  data:
+    slot: 2
+    start: "17:00"
+    end: "21:30"
+    days: [monday, tuesday, wednesday, thursday, friday]  # [] disables the slot
+  ```
+
+- **Simplified**: Morning, Day and Evening ranges, each active on chosen weekdays. Day always
+  spans from the end of Morning to the start of Evening. Edit them with
+  `home_smartlink.set_simplified_program`; omitted fields keep their value:
+
+  ```yaml
+  action: home_smartlink.set_simplified_program
+  target:
+    entity_id: climate.kitchen_thermostat
+  data:
+    morning_start: "06:00"
+    morning_end: "08:00"
+    evening_start: "17:00"
+    evening_end: "22:00"
+    morning_days: [monday, tuesday, wednesday, thursday, friday]
+    evening_days: [monday, tuesday, wednesday, thursday, friday, saturday, sunday]
+  ```
+
+Times must be multiples of 10 minutes (the thermostats store 10-minute steps). The app's
+rules apply: a slot ends after it starts; Morning ends before Evening starts; eco is at least
+0.5 °C below comfort.
 
 ## Requirements
 
@@ -99,14 +145,14 @@ If the password changes, Home Assistant asks you to sign in again (re-authentica
 - **Measured temperatures are not live** (see above).
 - **Whole-document writes.** Each command saves the whole home document (that is what the
   app does). A change made in the app at the same moment can be overwritten.
-- **In `auto`, the target temperature is not shown.** The API does not say which program
-  slot (comfort/eco) is active.
-- **Antifreeze temperature is not shown.** The device value is not exposed.
-- **Not supported:** editing the weekly program, eco/comfort temperatures, vacation mode,
-  geofencing, ecopilot, open-window detection, consumption counters. Use the app for these.
-- Program mode on a room relies on a frame rule checked on 3 rooms
-  ([docs/API.md](docs/API.md) §5.1). Rooms with more than 9 program events are refused
-  rather than guessed.
+- **The `auto` target is computed** from the program and Home Assistant's time zone, the
+  same way the app does. It assumes Home Assistant and the home are in the same time zone.
+  Antifreeze shows 7 °C, the value the app displays.
+- **Not supported:** vacation mode, geofencing, open-window detection, temperature
+  limitation, slot modes Boost/Fan beyond setting them, consumption counters. Use the app
+  for these.
+- The command frames come from the decompiled app ([docs/API.md](docs/API.md) §5). Program
+  edits were checked live against the cloud document, not on the thermostats themselves.
 - Error responses of the cloud (wrong password, expired session, box offline) were never
   observed. They are handled generically.
 
