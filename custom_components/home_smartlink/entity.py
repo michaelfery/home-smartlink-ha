@@ -2,10 +2,13 @@
 
 from __future__ import annotations
 
+from collections.abc import Awaitable
+
+from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
 from homeassistant.helpers.device_registry import DeviceInfo
 from homeassistant.helpers.update_coordinator import CoordinatorEntity
 
-from homesmartlink import Room, RoomStatus
+from homesmartlink import HomeSmartLinkError, Room, RoomStatus, UnsupportedCommandError
 
 from .const import DOMAIN, MANUFACTURER
 from .coordinator import HomeSmartLinkCoordinator
@@ -75,3 +78,21 @@ class HomeSmartLinkRoomEntity(CoordinatorEntity[HomeSmartLinkCoordinator]):
     @property
     def available(self) -> bool:
         return super().available and self.room is not None
+
+
+async def call_cloud(command: Awaitable[None]) -> None:
+    """Run a write and turn library errors into Home Assistant errors."""
+    try:
+        await command
+    except UnsupportedCommandError as err:
+        raise ServiceValidationError(
+            translation_domain=DOMAIN,
+            translation_key="unsupported_command",
+            translation_placeholders={"error": str(err)},
+        ) from err
+    except HomeSmartLinkError as err:
+        raise HomeAssistantError(
+            translation_domain=DOMAIN,
+            translation_key="command_failed",
+            translation_placeholders={"error": str(err)},
+        ) from err

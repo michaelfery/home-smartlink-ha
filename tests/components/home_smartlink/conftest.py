@@ -66,8 +66,10 @@ def mock_client() -> Generator[MagicMock]:
         client.get_device_status.return_value = parse_device_status(load_api("device_status.json"))
         client.request_diagnosis.return_value = "diag-1"
 
-        async def set_room_state(home_id: str, room: int, mode: Any, manual: Any = None) -> Home:
-            home = fixture_home()
+        async def set_room_state(
+            home_id: str, room: int, mode: Any, manual: Any = None, **_: Any
+        ) -> Home:
+            home = client.get_home.return_value
             settings = home.room(room).heater_settings
             new = type(settings)(
                 mode,
@@ -81,6 +83,14 @@ def mock_client() -> Generator[MagicMock]:
             client.get_home.return_value = updated
             return updated
 
+        async def apply_edit(home_id: str, *args: Any, **_: Any) -> Home:
+            edit = args[-1]
+            updated = edit(client.get_home.return_value)
+            client.get_home.return_value = updated
+            return updated
+
+        client.update_room.side_effect = apply_edit
+        client.update_program.side_effect = apply_edit
         client.set_room_state.side_effect = set_room_state
         yield client
 
@@ -93,6 +103,13 @@ def config_entry() -> MockConfigEntry:
         title=f"Home-SmartLink ({EMAIL})",
         data={CONF_EMAIL: EMAIL, CONF_PASSWORD: PASSWORD, CONF_HOME_ID: HOME_ID},
     )
+
+
+@pytest.fixture(autouse=True)
+async def paris_morning(hass: HomeAssistant, freezer: Any) -> None:
+    """Thursday 22 Oct 2026, 07:00 in Paris: the bathroom program slot is active."""
+    await hass.config.async_set_time_zone("Europe/Paris")
+    freezer.move_to("2026-10-22T05:00:00+00:00")
 
 
 @pytest.fixture

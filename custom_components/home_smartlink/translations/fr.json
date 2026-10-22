@@ -59,6 +59,23 @@
       "status_updated": {
         "name": "Mise à jour de l'état des thermostats"
       }
+    },
+    "number": {
+      "eco_temperature": {
+        "name": "Température éco (programme)"
+      },
+      "comfort_temperature": {
+        "name": "Température confort (programme)"
+      }
+    },
+    "select": {
+      "programming_preference": {
+        "name": "Préférence de programmation",
+        "state": {
+          "advanced": "Avancée",
+          "simplified": "Simplifiée"
+        }
+      }
     }
   },
   "exceptions": {
@@ -67,6 +84,88 @@
     },
     "command_failed": {
       "message": "Home-SmartLink n'a pas accepté la commande : {error}"
+    }
+  },
+  "selector": {
+    "weekday": {
+      "options": {
+        "monday": "Lundi",
+        "tuesday": "Mardi",
+        "wednesday": "Mercredi",
+        "thursday": "Jeudi",
+        "friday": "Vendredi",
+        "saturday": "Samedi",
+        "sunday": "Dimanche"
+      }
+    },
+    "slot_mode": {
+      "options": {
+        "standard": "Standard",
+        "boost": "Boost",
+        "fan": "Ventilation"
+      }
+    }
+  },
+  "services": {
+    "set_program_slot": {
+      "name": "Modifier une plage de programme",
+      "description": "Modifie l'une des six plages d'une programmation avancée. Le radiateur vise la température confort pendant les plages actives, et la température éco sinon.",
+      "fields": {
+        "slot": {
+          "name": "Plage",
+          "description": "Numéro de plage, de 1 à 6, dans l'ordre de l'application."
+        },
+        "start": {
+          "name": "Début",
+          "description": "Multiple de 10 minutes."
+        },
+        "end": {
+          "name": "Fin",
+          "description": "Après le début, multiple de 10 minutes."
+        },
+        "days": {
+          "name": "Jours",
+          "description": "Jours où la plage est active (aucun la désactive)."
+        },
+        "mode": {
+          "name": "Mode de la plage",
+          "description": "Laisser vide pour ne pas le changer."
+        }
+      }
+    },
+    "set_simplified_program": {
+      "name": "Modifier la programmation simplifiée",
+      "description": "Modifie les horaires Matin et Soir et les jours d'une programmation simplifiée. La plage Journée va toujours de la fin du Matin au début du Soir. Les champs omis gardent leur valeur.",
+      "fields": {
+        "morning_start": {
+          "name": "Début du matin",
+          "description": "Début du matin"
+        },
+        "morning_end": {
+          "name": "Fin du matin",
+          "description": "Fin du matin"
+        },
+        "evening_start": {
+          "name": "Début du soir",
+          "description": "Début du soir"
+        },
+        "evening_end": {
+          "name": "Fin du soir",
+          "description": "Fin du soir"
+        },
+        "morning_days": {
+          "name": "Jours du matin",
+          "description": "Jours où le Matin chauffe en confort."
+        },
+        "day_days": {
+          "name": "Jours de la journée",
+          "description": "Jours où la Journée chauffe en confort."
+        },
+        "evening_days": {
+          "name": "Jours du soir",
+          "description": "Jours où le Soir chauffe en confort."
+        }
+      }
     }
   }
 }

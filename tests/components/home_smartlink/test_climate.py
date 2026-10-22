@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 from typing import Any
-from unittest.mock import MagicMock
+from unittest.mock import ANY, MagicMock
 
 import pytest
 from homeassistant.components.climate import (
@@ -60,7 +60,7 @@ async def test_states_from_captured_home(
     bathroom = hass.states.get(BATHROOM)
     assert bathroom is not None
     assert bathroom.state == HVACMode.AUTO
-    assert bathroom.attributes[ATTR_TEMPERATURE] is None
+    assert bathroom.attributes[ATTR_TEMPERATURE] == 20.0  # comfort: 06:30-08:00 slot active
     assert bathroom.attributes[ATTR_CURRENT_TEMPERATURE] == 20.0
 
 
@@ -134,7 +134,7 @@ async def test_services_send_the_right_command(
     await hass.services.async_call(
         CLIMATE_DOMAIN, service, {ATTR_ENTITY_ID: CUISINE, **data}, blocking=True
     )
-    mock_client.set_room_state.assert_awaited_once_with(HOME_ID, 0, *expected)
+    mock_client.set_room_state.assert_awaited_once_with(HOME_ID, 0, *expected, today=ANY)
 
 
 async def test_command_is_reflected_immediately(
@@ -149,7 +149,7 @@ async def test_command_is_reflected_immediately(
     state = hass.states.get(CUISINE)
     assert state is not None
     assert state.attributes[ATTR_PRESET_MODE] == PRESET_AWAY
-    assert state.attributes[ATTR_TEMPERATURE] is None
+    assert state.attributes[ATTR_TEMPERATURE] == 7.0
 
 
 @pytest.mark.parametrize(

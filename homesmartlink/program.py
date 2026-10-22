@@ -11,7 +11,7 @@ Which slots count depends on the room's programming preference:
 
 from __future__ import annotations
 
-from collections.abc import Iterable
+from collections.abc import Iterable, Mapping
 from datetime import datetime, time
 from enum import IntEnum, StrEnum
 from typing import Any
@@ -218,7 +218,7 @@ def with_simplified_times(
 
 
 def with_simplified_days(
-    home: Home, room_number: int, days: dict[SimplifiedRange, Iterable[int]]
+    home: Home, room_number: int, days: Mapping[SimplifiedRange, Iterable[int]]
 ) -> Home:
     """Weekdays on which each Simplified range heats at comfort temperature."""
     masks = {SIMPLIFIED_EVENT_IDS[r]: mask_from_days(d) for r, d in days.items()}

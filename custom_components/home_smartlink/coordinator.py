@@ -12,6 +12,7 @@ from typing import TYPE_CHECKING
 from homeassistant.core import HomeAssistant
 from homeassistant.exceptions import ConfigEntryAuthFailed
 from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from homeassistant.util import dt as dt_util
 
 from homesmartlink import (
     AuthenticationError,
@@ -143,7 +144,27 @@ class HomeSmartLinkCoordinator(DataUpdateCoordinator[HomeSmartLinkState]):
         self, room_number: int, mode: HeaterMode, manual_value: float | None = None
     ) -> None:
         """Send a command, show it immediately, then confirm with a refresh."""
-        home = await self.client.set_room_state(self.home_id, room_number, mode, manual_value)
+        await self._apply(
+            await self.client.set_room_state(
+                self.home_id, room_number, mode, manual_value, today=dt_util.now().date()
+            )
+        )
+
+    async def async_update_room(self, room_number: int, edit: Callable[[Home], Home]) -> None:
+        """Room settings edit (eco/comfort, programming preference), like the room editor."""
+        await self._apply(
+            await self.client.update_room(
+                self.home_id, room_number, edit, today=dt_util.now().date()
+            )
+        )
+
+    async def async_update_program(self, edit: Callable[[Home], Home]) -> None:
+        """Weekly program edit, like the app's program editor."""
+        await self._apply(
+            await self.client.update_program(self.home_id, edit, today=dt_util.now().date())
+        )
+
+    async def _apply(self, home: Home) -> None:
         if self.data is not None:
             self.async_set_updated_data(replace(self.data, home=home))
         await self.async_request_refresh()

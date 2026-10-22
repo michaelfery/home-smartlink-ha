@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from datetime import timedelta
+from datetime import date, timedelta
 from unittest.mock import MagicMock, patch
 
 import pytest
@@ -159,6 +159,8 @@ async def test_command_is_shown_optimistically_then_refreshed(
     settings = coordinator.data.home.room(0).heater_settings
     assert settings.current_mode is HeaterMode.MANUAL
     assert settings.manual_value == 21.5
-    mock_client.set_room_state.assert_awaited_once_with(HOME_ID, 0, HeaterMode.MANUAL, 21.5)
+    mock_client.set_room_state.assert_awaited_once_with(
+        HOME_ID, 0, HeaterMode.MANUAL, 21.5, today=date(2026, 10, 22)
+    )
     refresh.assert_awaited_once()
     assert mock_client.get_home.await_count == reads_before

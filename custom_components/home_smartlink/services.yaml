@@ -1,0 +1,79 @@
+set_program_slot:
+  target:
+    entity:
+      integration: home_smartlink
+      domain: climate
+  fields:
+    slot:
+      required: true
+      selector:
+        number:
+          min: 1
+          max: 6
+          mode: box
+    start:
+      required: true
+      example: "06:30"
+      selector:
+        time:
+    end:
+      required: true
+      example: "08:00"
+      selector:
+        time:
+    days:
+      required: true
+      selector:
+        select:
+          multiple: true
+          translation_key: weekday
+          options:
+            - monday
+            - tuesday
+            - wednesday
+            - thursday
+            - friday
+            - saturday
+            - sunday
+    mode:
+      selector:
+        select:
+          translation_key: slot_mode
+          options:
+            - standard
+            - boost
+            - fan
+
+set_simplified_program:
+  target:
+    entity:
+      integration: home_smartlink
+      domain: climate
+  fields:
+    morning_start:
+      selector:
+        time:
+    morning_end:
+      selector:
+        time:
+    evening_start:
+      selector:
+        time:
+    evening_end:
+      selector:
+        time:
+    morning_days: &days
+      selector:
+        select:
+          multiple: true
+          translation_key: weekday
+          options:
+            - monday
+            - tuesday
+            - wednesday
+            - thursday
+            - friday
+            - saturday
+            - sunday
+    day_days: *days
+    evening_days: *days
